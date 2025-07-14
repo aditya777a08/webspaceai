@@ -1,29 +1,15 @@
 import React from 'react';
 
-const PirateIcon: React.FC<{ className?: string }> = ({ className }) => (
+const CrownIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-        <line x1="9" y1="9" x2="9.01" y2="9"/>
-        <line x1="15" y1="9" x2="15.01" y2="9"/>
-        <path d="M12 6l-2 2h4l-2-2z"/>
+        <path d="M2 20h20l-2-6-4 2-4-4-4 4-4-2-2 6z"/>
+        <path d="M6 9l4-4 4 4"/>
     </svg>
 );
 
-const ShipIcon: React.FC<{ className?: string }> = ({ className }) => (
+const ShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M2 20l20-8-8-2-2-8z"/>
-        <path d="M7 17v5h10v-5"/>
-        <path d="M12 12v8"/>
-        <path d="M5 12l7-7 7 7"/>
-    </svg>
-);
-
-const TreasureIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 0 1-8 0"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
 );
 
@@ -42,110 +28,125 @@ const AnchorIcon: React.FC<{ className?: string }> = ({ className }) => (
     </svg>
 );
 
-const CannonIcon: React.FC<{ className?: string }> = ({ className }) => (
+const TreasureIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M12 1v6m0 6v6"/>
-        <path d="M1 12h6m6 0h6"/>
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
     </svg>
 );
 
-const PirateCard: React.FC<{ 
+const ShipIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <path d="M2 20l20-8-8-2-2-8z"/>
+        <path d="M7 17v5h10v-5"/>
+        <path d="M12 12v8"/>
+        <path d="M5 12l7-7 7 7"/>
+    </svg>
+);
+
+const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+    </svg>
+);
+
+const RoyalCard: React.FC<{ 
     icon: React.ReactNode; 
     title: string; 
     description: string;
-    color: string;
-}> = ({ icon, title, description, color }) => (
-    <div className={`group relative bg-gradient-to-br ${color} p-8 rounded-3xl border-4 border-amber-600/30 transition-all duration-500 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 hover:rotate-1`}>
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-red-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    gradient: string;
+}> = ({ icon, title, description, gradient }) => (
+    <div className={`group relative bg-gradient-to-br ${gradient} p-8 rounded-3xl border-2 border-blue-300/30 transition-all duration-700 hover:border-gold-400 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-3 hover:scale-105`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         <div className="relative z-10">
-            <div className="w-16 h-16 mb-6 text-amber-300 group-hover:text-amber-200 transition-colors duration-300 group-hover:scale-110 transform">
+            <div className="w-16 h-16 mb-6 text-gold-300 group-hover:text-gold-200 transition-colors duration-500 group-hover:scale-110 transform">
                 {icon}
             </div>
-            <h4 className="font-bold text-2xl text-amber-100 mb-4 group-hover:text-white transition-colors duration-300">{title}</h4>
-            <p className="text-amber-200/80 leading-relaxed group-hover:text-amber-100 transition-colors duration-300">{description}</p>
+            <h4 className="font-bold text-2xl text-blue-100 mb-4 group-hover:text-white transition-colors duration-500">{title}</h4>
+            <p className="text-blue-200/90 leading-relaxed group-hover:text-blue-100 transition-colors duration-500">{description}</p>
         </div>
-        <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span className="text-amber-900 text-sm font-bold">⚡</span>
+        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gold-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            <span className="text-blue-900 text-sm font-bold">⭐</span>
         </div>
     </div>
 );
 
-const CrewLevelCard: React.FC<{ 
+const NobleRankCard: React.FC<{ 
     level: number; 
     title: string; 
     rank: string;
     description: string; 
     duties: string[]; 
     treasures: string[]; 
-    tale: string;
-    shipColor: string;
-}> = ({ level, title, rank, description, duties, treasures, tale, shipColor }) => (
+    legend: string;
+    gradient: string;
+}> = ({ level, title, rank, description, duties, treasures, legend, gradient }) => (
     <div className="group relative mb-20 overflow-hidden">
-        {/* Treasure map background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-red-900/10 to-amber-800/10 rounded-3xl"></div>
+        {/* Royal background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-indigo-800/10 rounded-3xl"></div>
         
-        {/* Main ship card */}
-        <div className="relative bg-gradient-to-br from-amber-900/80 to-red-900/60 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-amber-400 group-hover:shadow-2xl group-hover:shadow-amber-500/20">
-            {/* Ship header */}
-            <div className="relative p-8 pb-6 bg-gradient-to-r from-amber-800/50 to-red-800/50">
+        {/* Main noble card */}
+        <div className="relative bg-gradient-to-br from-blue-900/90 to-purple-900/70 backdrop-blur-xl border-3 border-blue-400/50 rounded-3xl overflow-hidden transition-all duration-700 group-hover:border-gold-400 group-hover:shadow-2xl group-hover:shadow-blue-500/30">
+            {/* Noble header */}
+            <div className="relative p-8 pb-6 bg-gradient-to-r from-blue-800/60 to-purple-800/60">
                 <div className="flex items-center gap-8 mb-6">
-                    <div className={`flex items-center justify-center w-24 h-24 text-4xl font-black rounded-full bg-gradient-to-br ${shipColor} text-amber-100 shadow-2xl border-4 border-amber-400/50 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`flex items-center justify-center w-24 h-24 text-4xl font-black rounded-full bg-gradient-to-br ${gradient} text-blue-100 shadow-2xl border-3 border-gold-400/60 group-hover:scale-110 transition-transform duration-500`}>
                         {level}
                     </div>
                     <div>
                         <div className="flex items-center gap-3 mb-2">
-                            <ShipIcon className="w-8 h-8 text-amber-400" />
-                            <span className="text-amber-300 font-bold text-lg uppercase tracking-wider">{rank}</span>
+                            <CrownIcon className="w-8 h-8 text-gold-400" />
+                            <span className="text-gold-300 font-bold text-lg uppercase tracking-wider">{rank}</span>
                         </div>
-                        <h3 className="text-4xl font-black text-amber-100 mb-2">{title}</h3>
+                        <h3 className="text-4xl font-black text-blue-100 mb-2">{title}</h3>
                         <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-amber-400 animate-pulse"></div>
-                            <span className="text-amber-200 font-medium">Crew Level {level}</span>
+                            <div className="w-3 h-3 rounded-full bg-gold-400 animate-pulse"></div>
+                            <span className="text-blue-200 font-medium">Noble Rank {level}</span>
                         </div>
                     </div>
                 </div>
                 
                 {/* Mission description */}
-                <div className="bg-amber-900/40 rounded-2xl p-6 mb-6 border-2 border-amber-600/30">
-                    <h4 className="font-bold text-amber-200 mb-3 text-xl flex items-center gap-3">
-                        <CompassIcon className="w-6 h-6 text-amber-400" />
-                        The Mission
+                <div className="bg-blue-900/50 rounded-2xl p-6 mb-6 border-2 border-blue-400/30">
+                    <h4 className="font-bold text-blue-200 mb-3 text-xl flex items-center gap-3">
+                        <CompassIcon className="w-6 h-6 text-gold-400" />
+                        The Sacred Mission
                     </h4>
-                    <p className="text-amber-100 leading-relaxed text-lg">{description}</p>
+                    <p className="text-blue-100 leading-relaxed text-lg">{description}</p>
                 </div>
             </div>
 
-            {/* Content treasure chests */}
+            {/* Content sections */}
             <div className="px-8 pb-6">
                 <div className="grid lg:grid-cols-2 gap-8">
-                    {/* Crew Duties */}
+                    {/* Noble Duties */}
                     <div className="space-y-4">
-                        <h4 className="font-bold text-amber-200 text-xl flex items-center gap-3">
-                            <AnchorIcon className="w-6 h-6 text-red-400" />
-                            Crew Duties
+                        <h4 className="font-bold text-blue-200 text-xl flex items-center gap-3">
+                            <ShieldIcon className="w-6 h-6 text-blue-400" />
+                            Sacred Duties
                         </h4>
                         <div className="space-y-3">
                             {duties.map((duty, i) => (
-                                <div key={i} className="flex items-start gap-4 p-4 bg-red-900/30 rounded-xl border border-red-600/30 hover:bg-red-900/50 transition-colors duration-300">
-                                    <div className="w-3 h-3 rounded-full bg-red-400 mt-2 flex-shrink-0 animate-pulse"></div>
-                                    <span className="text-amber-100">{duty}</span>
+                                <div key={i} className="flex items-start gap-4 p-4 bg-blue-900/40 rounded-xl border border-blue-400/30 hover:bg-blue-900/60 transition-colors duration-500">
+                                    <div className="w-3 h-3 rounded-full bg-blue-400 mt-2 flex-shrink-0 animate-pulse"></div>
+                                    <span className="text-blue-100">{duty}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Treasure Rewards */}
+                    {/* Royal Rewards */}
                     <div className="space-y-4">
-                        <h4 className="font-bold text-amber-200 text-xl flex items-center gap-3">
-                            <TreasureIcon className="w-6 h-6 text-amber-400" />
-                            Treasure Rewards
+                        <h4 className="font-bold text-blue-200 text-xl flex items-center gap-3">
+                            <TreasureIcon className="w-6 h-6 text-gold-400" />
+                            Royal Rewards
                         </h4>
                         <div className="space-y-3">
                             {treasures.map((treasure, i) => (
-                                <div key={i} className="flex items-start gap-4 p-4 bg-amber-900/30 rounded-xl border border-amber-600/30 hover:bg-amber-900/50 transition-colors duration-300">
-                                    <div className="w-3 h-3 rounded-full bg-amber-400 mt-2 flex-shrink-0 animate-pulse"></div>
-                                    <span className="text-amber-100">{treasure}</span>
+                                <div key={i} className="flex items-start gap-4 p-4 bg-purple-900/40 rounded-xl border border-purple-400/30 hover:bg-purple-900/60 transition-colors duration-500">
+                                    <div className="w-3 h-3 rounded-full bg-gold-400 mt-2 flex-shrink-0 animate-pulse"></div>
+                                    <span className="text-blue-100">{treasure}</span>
                                 </div>
                             ))}
                         </div>
@@ -153,131 +154,131 @@ const CrewLevelCard: React.FC<{
                 </div>
             </div>
 
-            {/* Pirate tale footer */}
-            <div className="bg-gradient-to-r from-red-900/60 to-amber-900/60 backdrop-blur-sm p-8 border-t-4 border-amber-600/50">
-                <h4 className="font-bold text-amber-200 mb-4 flex items-center gap-3 text-xl">
-                    <PirateIcon className="w-6 h-6 text-amber-400" />
-                    A Pirate's Tale
+            {/* Legend footer */}
+            <div className="bg-gradient-to-r from-purple-900/70 to-blue-900/70 backdrop-blur-sm p-8 border-t-3 border-blue-400/50">
+                <h4 className="font-bold text-blue-200 mb-4 flex items-center gap-3 text-xl">
+                    <StarIcon className="w-6 h-6 text-gold-400" />
+                    Captain's Legend
                 </h4>
-                <p className="text-amber-100 leading-relaxed italic text-lg border-l-4 border-amber-400/50 pl-6">"{tale}"</p>
+                <p className="text-blue-100 leading-relaxed italic text-lg border-l-4 border-gold-400/50 pl-6">"{legend}"</p>
             </div>
         </div>
     </div>
 );
 
-const QuestStep: React.FC<{ step: number; title: string; description: string }> = ({ step, title, description }) => (
+const NobleStep: React.FC<{ step: number; title: string; description: string }> = ({ step, title, description }) => (
     <div className="group relative">
         <div className="flex items-start gap-8">
-            <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-amber-500 to-red-600 rounded-full flex items-center justify-center text-white font-black text-2xl shadow-2xl border-4 border-amber-400/50 group-hover:shadow-amber-500/50 group-hover:scale-110 transition-all duration-300">
+            <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-black text-2xl shadow-2xl border-3 border-gold-400/60 group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-500">
                 {step}
             </div>
             <div className="flex-1 pt-4">
-                <h4 className="text-2xl font-black text-amber-100 mb-4 group-hover:text-white transition-colors duration-300">{title}</h4>
-                <p className="text-amber-200 leading-relaxed text-lg group-hover:text-amber-100 transition-colors duration-300">{description}</p>
+                <h4 className="text-2xl font-black text-blue-100 mb-4 group-hover:text-white transition-colors duration-500">{title}</h4>
+                <p className="text-blue-200 leading-relaxed text-lg group-hover:text-blue-100 transition-colors duration-500">{description}</p>
             </div>
         </div>
         {step < 7 && (
-            <div className="absolute left-10 top-24 w-1 h-16 bg-gradient-to-b from-amber-500/70 to-transparent"></div>
+            <div className="absolute left-10 top-24 w-1 h-16 bg-gradient-to-b from-blue-500/70 to-transparent"></div>
         )}
     </div>
 );
 
 const SafetyPage: React.FC = () => {
-    const shipColors = [
-        'from-emerald-600 to-green-700',
-        'from-blue-600 to-cyan-700', 
+    const nobleGradients = [
+        'from-emerald-600 to-teal-700',
+        'from-blue-600 to-indigo-700', 
         'from-purple-600 to-violet-700',
-        'from-orange-600 to-red-700',
-        'from-red-700 to-pink-700'
+        'from-indigo-600 to-blue-700',
+        'from-violet-700 to-purple-800'
     ];
 
     return (
         <main className="relative min-h-screen overflow-hidden">
-            {/* Pirate ship background */}
-            <div className="fixed inset-0 bg-gradient-to-br from-amber-900/20 via-red-900/30 to-amber-800/20 -z-10"></div>
-            <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d97706\' fill-opacity=\'0.05\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] -z-10"></div>
+            {/* Royal ocean background */}
+            <div className="fixed inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/40 to-indigo-800/30 -z-10"></div>
+            <div className="fixed inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%232563eb\' fill-opacity=\'0.05\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')] -z-10"></div>
             
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-                {/* Pirate Hero Section */}
+                {/* Royal Hero Section */}
                 <div className="text-center mb-24">
-                    <div className="inline-flex items-center gap-3 bg-amber-600/20 border-2 border-amber-500/40 rounded-full px-8 py-3 mb-8">
-                        <PirateIcon className="w-6 h-6 text-amber-400" />
-                        <span className="text-amber-300 font-bold text-lg uppercase tracking-wider">Pirate's Code of AI Safety</span>
+                    <div className="inline-flex items-center gap-3 bg-blue-600/20 border-2 border-gold-400/50 rounded-full px-8 py-3 mb-8">
+                        <CrownIcon className="w-6 h-6 text-gold-400" />
+                        <span className="text-gold-300 font-bold text-lg uppercase tracking-wider">The Captain's Eternal Code</span>
                     </div>
                     
                     <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-red-500 to-amber-600">
-                            Ahoy Matey!
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-blue-400 to-purple-500">
+                            The Captain
                         </span>
                         <br />
-                        <span className="text-amber-100">Safe Seas Ahead</span>
+                        <span className="text-blue-100">Never Dies</span>
                     </h1>
                     
-                    <p className="text-2xl md:text-3xl text-amber-200 max-w-4xl mx-auto leading-relaxed mb-12">
-                        Navigate the treacherous waters of AI with our legendary Pirate's Code—a treasure map to safe harbors and protected shores, savvy?
+                    <p className="text-2xl md:text-3xl text-blue-200 max-w-4xl mx-auto leading-relaxed mb-12">
+                        Like the legendary Captain Jack Sparrow, true AI safety is immortal—a code that endures through every storm, every challenge, every evolution of technology.
                     </p>
                     
                     <div className="flex flex-wrap justify-center gap-6">
-                        <button className="bg-gradient-to-r from-amber-500 to-red-600 text-white font-black py-4 px-10 rounded-full text-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-4 border-amber-400/50">
-                            ⚓ Chart Your Course
+                        <button className="bg-gradient-to-r from-gold-500 to-blue-600 text-white font-black py-4 px-10 rounded-full text-xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-3 border-gold-400/60">
+                            ⚓ Begin the Eternal Journey
                         </button>
-                        <button className="border-4 border-amber-600 text-amber-300 font-black py-4 px-10 rounded-full text-xl hover:border-amber-400 hover:bg-amber-900/30 transition-all duration-300 hover:scale-105">
-                            🗺️ View Treasure Map
+                        <button className="border-3 border-blue-400 text-blue-300 font-black py-4 px-10 rounded-full text-xl hover:border-gold-400 hover:bg-blue-900/30 transition-all duration-500 hover:scale-105">
+                            🗺️ Discover the Code
                         </button>
                     </div>
                 </div>
 
-                {/* Pirate Stats */}
+                {/* Royal Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
                     {[
-                        { number: '5', label: 'Crew Ranks', icon: '⚓', color: 'text-amber-400' },
-                        { number: '8', label: 'Sacred Laws', icon: '📜', color: 'text-red-400' },
-                        { number: '100+', label: 'Safety Treasures', icon: '💎', color: 'text-emerald-400' },
-                        { number: '∞', label: 'Adventure Awaits', icon: '🏴‍☠️', color: 'text-purple-400' }
+                        { number: '5', label: 'Noble Ranks', icon: '👑', color: 'text-gold-400' },
+                        { number: '8', label: 'Sacred Principles', icon: '📜', color: 'text-blue-400' },
+                        { number: '∞', label: 'Eternal Vigilance', icon: '🛡️', color: 'text-purple-400' },
+                        { number: '1', label: 'Immortal Code', icon: '⭐', color: 'text-indigo-400' }
                     ].map((stat, i) => (
                         <div key={i} className="text-center group">
-                            <div className="text-6xl mb-2 group-hover:scale-125 transition-transform duration-300">
+                            <div className="text-6xl mb-2 group-hover:scale-125 transition-transform duration-500">
                                 {stat.icon}
                             </div>
-                            <div className={`text-5xl md:text-6xl font-black ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`text-5xl md:text-6xl font-black ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-500`}>
                                 {stat.number}
                             </div>
-                            <div className="text-amber-200 font-bold text-lg">{stat.label}</div>
+                            <div className="text-blue-200 font-bold text-lg">{stat.label}</div>
                         </div>
                     ))}
                 </div>
 
-                {/* Pirate's Code Introduction */}
+                {/* The Eternal Code Introduction */}
                 <section className="mb-24">
-                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
-                        The Pirate's Code
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-blue-500">
+                        The Eternal Code
                     </h2>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <p className="text-2xl text-amber-200 leading-relaxed">
-                                Arrr! Every good pirate knows that the seas be dangerous, and the same be true for the waters of artificial intelligence, savvy?
+                            <p className="text-2xl text-blue-200 leading-relaxed">
+                                In the vast oceans of artificial intelligence, where storms of complexity rage and uncharted waters stretch beyond the horizon, one truth remains constant: the Captain never dies.
                             </p>
-                            <p className="text-2xl text-amber-200 leading-relaxed">
-                                Our legendary Code ensures that as yer AI ship grows more powerful, yer defenses grow stronger too. No scurvy dog wants their vessel to run aground on the rocks of reckless AI!
+                            <p className="text-2xl text-blue-200 leading-relaxed">
+                                Like Captain Jack Sparrow's legendary immortality, our AI Safety Framework transcends time, technology, and challenge. It is not merely a set of rules—it is an eternal covenant that grows stronger with each passing tide.
                             </p>
                         </div>
                         <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-red-500/30 rounded-3xl blur-2xl"></div>
-                            <div className="relative bg-gradient-to-br from-amber-900/80 to-red-900/60 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl p-8">
-                                <h4 className="text-2xl font-black text-amber-100 mb-8 flex items-center gap-3">
-                                    <TreasureIcon className="w-8 h-8 text-amber-400" />
-                                    Pirate's Treasures
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-3xl blur-2xl"></div>
+                            <div className="relative bg-gradient-to-br from-blue-900/90 to-purple-900/70 backdrop-blur-xl border-3 border-blue-400/50 rounded-3xl p-8">
+                                <h4 className="text-2xl font-black text-blue-100 mb-8 flex items-center gap-3">
+                                    <TreasureIcon className="w-8 h-8 text-gold-400" />
+                                    Eternal Treasures
                                 </h4>
                                 <div className="space-y-6">
                                     {[
-                                        '🏴‍☠️ Fearless risk navigation',
-                                        '🗺️ Clear treasure map to safety',
-                                        '⚓ Scalable ship defenses',
+                                        '👑 Immortal safety principles',
+                                        '🗺️ Timeless navigation wisdom',
+                                        '⚓ Unbreakable protective anchors',
                                         '🏆 Legendary crew standards'
                                     ].map((treasure, i) => (
                                         <div key={i} className="flex items-center gap-4">
                                             <div className="text-2xl">{treasure.split(' ')[0]}</div>
-                                            <span className="text-amber-200 text-lg">{treasure.substring(2)}</span>
+                                            <span className="text-blue-200 text-lg">{treasure.substring(2)}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -286,194 +287,194 @@ const SafetyPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Pirate Principles */}
+                {/* Sacred Principles */}
                 <section className="mb-24">
-                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
-                        Sacred Laws of the Sea
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-blue-500">
+                        Eight Sacred Principles
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <PirateCard
+                        <RoyalCard
                             icon={<CompassIcon className="w-full h-full" />}
-                            title="Navigate by the Stars"
-                            description="Chart yer course with capability and risk as yer guiding stars, ensuring safe passage through treacherous waters."
-                            color="from-blue-800 to-cyan-900"
+                            title="Navigate by Eternal Stars"
+                            description="Chart your course using capability and risk as your guiding constellations, ensuring safe passage through any storm."
+                            gradient="from-blue-800 to-indigo-900"
                         />
-                        <PirateCard
+                        <RoyalCard
                             icon={<AnchorIcon className="w-full h-full" />}
-                            title="Drop Anchor When Needed"
-                            description="Know when to stop and secure yer ship—clear warning signals tell ye when danger lurks ahead."
-                            color="from-emerald-800 to-green-900"
+                            title="Drop the Sacred Anchor"
+                            description="Know when to halt and secure your vessel—clear warning signals guide you away from treacherous waters."
+                            gradient="from-emerald-800 to-teal-900"
                         />
-                        <PirateCard
-                            icon={<CannonIcon className="w-full h-full" />}
-                            title="Multiple Cannons Ready"
-                            description="Never rely on a single defense—layer yer protections like a seasoned captain layers his armor."
-                            color="from-purple-800 to-violet-900"
+                        <RoyalCard
+                            icon={<ShieldIcon className="w-full h-full" />}
+                            title="Layer Noble Defenses"
+                            description="Never rely on a single protection—build multiple shields like a wise admiral fortifies his fleet."
+                            gradient="from-purple-800 to-violet-900"
                         />
-                        <PirateCard
+                        <RoyalCard
                             icon={<ShipIcon className="w-full h-full" />}
-                            title="Test Yer Ship's Mettle"
-                            description="Battle-test yer vessel against the fiercest storms and craftiest enemies before setting sail."
-                            color="from-red-800 to-pink-900"
+                            title="Test in Royal Waters"
+                            description="Prove your vessel's worth against the mightiest tempests before sailing into unknown territories."
+                            gradient="from-indigo-800 to-blue-900"
                         />
-                        <PirateCard
+                        <RoyalCard
                             icon={<TreasureIcon className="w-full h-full" />}
-                            title="Captain's Council"
-                            description="Assemble a crew of wise captains to guide yer decisions and keep ye on the righteous path."
-                            color="from-amber-800 to-orange-900"
+                            title="Convene the Admiral's Council"
+                            description="Gather the wisest captains to guide your decisions and maintain the sacred code of the seas."
+                            gradient="from-amber-800 to-orange-900"
                         />
-                        <PirateCard
-                            icon={<PirateIcon className="w-full h-full" />}
-                            title="Keep Watch Always"
-                            description="Post lookouts day and night—constant vigilance keeps yer ship safe from unexpected threats."
-                            color="from-indigo-800 to-blue-900"
+                        <RoyalCard
+                            icon={<CrownIcon className="w-full h-full" />}
+                            title="Maintain Eternal Vigilance"
+                            description="Post sentries day and night—constant watchfulness protects your realm from unforeseen threats."
+                            gradient="from-rose-800 to-red-900"
                         />
-                        <PirateCard
+                        <RoyalCard
                             icon={<CompassIcon className="w-full h-full" />}
-                            title="Log Every Adventure"
-                            description="Record every battle, every storm, every lesson learned—knowledge be the greatest treasure."
-                            color="from-teal-800 to-cyan-900"
+                            title="Chronicle Every Voyage"
+                            description="Record every battle, every discovery, every lesson—wisdom is the most precious treasure."
+                            gradient="from-teal-800 to-cyan-900"
                         />
-                        <PirateCard
-                            icon={<AnchorIcon className="w-full h-full" />}
-                            title="Share the Bounty"
-                            description="Share yer discoveries with fellow pirates—together we make the seas safer for all."
-                            color="from-rose-800 to-red-900"
+                        <RoyalCard
+                            icon={<StarIcon className="w-full h-full" />}
+                            title="Share the Sacred Knowledge"
+                            description="Spread your discoveries across the seven seas—together we make all waters safer to sail."
+                            gradient="from-violet-800 to-purple-900"
                         />
                     </div>
                 </section>
 
-                {/* The Five Crew Ranks */}
+                {/* The Five Noble Ranks */}
                 <section className="mb-24">
-                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
-                        The Five Crew Ranks
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-blue-500">
+                        The Five Noble Ranks
                     </h2>
-                    <p className="text-2xl text-amber-200 text-center max-w-4xl mx-auto mb-20">
-                        From lowly deck swabber to legendary Pirate King—each rank brings greater responsibility and mightier defenses for yer AI vessel.
+                    <p className="text-2xl text-blue-200 text-center max-w-4xl mx-auto mb-20">
+                        From humble ship's apprentice to immortal Captain—each rank embodies greater wisdom and stronger defenses for your AI vessel.
                     </p>
 
-                    <CrewLevelCard 
+                    <NobleRankCard 
                         level={1} 
-                        title="Deck Swabber" 
-                        rank="Cabin Boy"
-                        description="Learn the ropes and keep the ship tidy—basic duties for simple AI tasks that won't sink the ship if they go awry." 
-                        duties={["Swab the decks with input validation", "Tie down loose cannons with access controls", "Keep watch with basic logging", "Follow the ship's rules and documentation"]} 
-                        treasures={["Clean ship operations", "Protected cargo holds", "Simple but effective defenses", "Clear sailing instructions"]} 
-                        tale="Young Billy started as a deck swabber on Captain Morgan's sentiment analysis ship. By keeping the decks clean of profanity and logging every visitor, he prevented scurvy pirates from corrupting the ship's precious cargo of customer reviews."
-                        shipColor={shipColors[0]}
+                        title="Ship's Apprentice" 
+                        rank="Novice Navigator"
+                        description="Learn the sacred ways and tend to basic duties—foundational skills for simple AI tasks that pose minimal risk to the realm." 
+                        duties={["Master basic input validation and cleansing", "Implement fundamental access controls", "Establish simple logging and monitoring", "Follow established safety documentation"]} 
+                        treasures={["Clean operational foundations", "Protected data sanctuaries", "Basic but reliable defenses", "Clear navigational charts"]} 
+                        legend="Young Marina began as an apprentice on Captain Blackwater's sentiment analysis vessel. By mastering the basics of input cleansing and access control, she prevented dark forces from corrupting the ship's precious cargo of customer insights."
+                        gradient={nobleGradients[0]}
                     />
 
-                    <CrewLevelCard 
+                    <NobleRankCard 
                         level={2} 
-                        title="Able Seaman" 
-                        rank="Crew Member"
-                        description="Handle the rigging and defend against boarding parties—moderate skills for interactive AI that talks back to landlubbers." 
-                        duties={["Man the defensive cannons with robust filtering", "Watch for enemy ships with anomaly detection", "Practice sword fighting with red team exercises", "Prepare for battle with incident response plans"]} 
-                        treasures={["Battle-tested defenses", "Enemy detection systems", "Crew combat training", "Emergency battle protocols"]} 
-                        tale="Seaman Sarah sailed with the Chatbot Revenge, where her quick thinking with semantic filters saved the day when crafty pirates tried to trick the ship into giving away the captain's treasure map of investment secrets."
-                        shipColor={shipColors[1]}
+                        title="Skilled Navigator" 
+                        rank="Seasoned Sailor"
+                        description="Handle the ship's defenses and engage with the outside world—intermediate skills for interactive AI that communicates with the realm's citizens." 
+                        duties={["Deploy advanced filtering and content shields", "Monitor for anomalous patterns and threats", "Conduct regular security assessments", "Maintain emergency response protocols"]} 
+                        treasures={["Battle-tested defensive systems", "Threat detection capabilities", "Crew training programs", "Emergency response readiness"]} 
+                        legend="Navigator Elena sailed with the Royal Chatbot Fleet, where her mastery of semantic filtering and anomaly detection saved the day when cunning adversaries attempted to extract the kingdom's strategic secrets."
+                        gradient={nobleGradients[1]}
                     />
 
-                    <CrewLevelCard 
+                    <NobleRankCard 
                         level={3} 
-                        title="Quartermaster" 
-                        rank="Ship's Officer"
-                        description="Manage the crew and coordinate defenses—seasoned skills for capable AI that can generate powerful magic (code and content)." 
-                        duties={["Command defensive formations with constitutional AI", "Monitor crew behavior and ship performance", "Lead expert boarding parties for red team attacks", "Write the ship's safety charter and battle plans"]} 
-                        treasures={["Advanced battle formations", "Crew performance insights", "Expert warrior consultations", "Formal ship safety documentation"]} 
-                        tale="Quartermaster Quinn commanded the HMS Code Generator, where constitutional AI principles helped the ship refuse dangerous requests for personalized medical spells, earning praise from the Royal Navy of Medical Experts."
-                        shipColor={shipColors[2]}
+                        title="Royal Officer" 
+                        rank="Fleet Commander"
+                        description="Command ship operations and coordinate defenses—advanced skills for capable AI that can generate powerful artifacts and knowledge." 
+                        duties={["Implement constitutional AI governance", "Oversee performance monitoring and optimization", "Lead expert security assessments", "Establish formal safety charters and protocols"]} 
+                        treasures={["Advanced governance frameworks", "Performance optimization insights", "Expert security consultations", "Formal safety documentation"]} 
+                        legend="Commander Thorne led the HMS Code Forge, where constitutional AI principles helped the vessel refuse dangerous requests for harmful spells, earning commendation from the Royal Academy of Magical Ethics."
+                        gradient={nobleGradients[2]}
                     />
 
-                    <CrewLevelCard 
+                    <NobleRankCard 
                         level={4} 
-                        title="First Mate" 
-                        rank="Ship's Commander"
-                        description="Navigate uncharted waters and command the fleet—master-level skills for near-legendary AI approaching the power of the ancient sea gods." 
-                        duties={["Navigate by the mystical stars of interpretability", "Command multi-ship fleets with coordination protocols", "Consult with the Admiralty for external validation", "Negotiate with port authorities for regulatory approval"]} 
-                        treasures={["Mystical navigation tools", "Fleet command capabilities", "Admiralty endorsements", "Royal port permissions"]} 
-                        tale="First Mate Blackbeard's multimodal reasoning fleet discovered corrupted planning charts in their navigation system. Using mystical interpretability tools, they detected the corruption and earned the blessing of the AI Safety Admiralty."
-                        shipColor={shipColors[3]}
+                        title="Admiral of the Fleet" 
+                        rank="Royal Admiral"
+                        description="Navigate uncharted waters and command multiple vessels—master-level skills for near-legendary AI approaching the power of ancient sea gods." 
+                        duties={["Navigate using advanced interpretability tools", "Coordinate multi-system fleet operations", "Consult with the Royal Safety Council", "Secure approval from maritime authorities"]} 
+                        treasures={["Advanced navigation instruments", "Fleet coordination capabilities", "Royal council endorsements", "Official maritime licenses"]} 
+                        legend="Admiral Stormwind's multimodal reasoning fleet discovered corrupted navigation charts in their systems. Using advanced interpretability tools, they detected the corruption and earned the blessing of the Royal AI Safety Council."
+                        gradient={nobleGradients[3]}
                     />
 
-                    <CrewLevelCard 
+                    <NobleRankCard 
                         level={5} 
-                        title="Pirate King" 
-                        rank="Legendary Captain"
-                        description="Rule the seven seas and command the power of Poseidon himself—godlike skills for AI that rivals or surpasses the greatest human captains." 
-                        duties={["Wield the Trident of Provable Alignment", "Command the Kraken of hardware failsafes", "Consult with Poseidon's AI-assisted oracle", "Unite all pirate fleets under one code"]} 
-                        treasures={["Divine mathematical proofs", "Kraken-powered emergency stops", "Oracle-guided oversight", "Universal pirate law"]} 
-                        tale="The legendary Pirate King's AGI fleet required the blessing of all sea gods. With Poseidon's Trident ensuring no ship could override the sacred shutdown command, and the Oracle revealing hidden strategic plots, the fleet earned the right to sail the most dangerous waters under the watchful eye of the Global Pirate Council."
-                        shipColor={shipColors[4]}
+                        title="Immortal Captain" 
+                        rank="Eternal Guardian"
+                        description="Rule the seven seas with the wisdom of ages—legendary skills for AI that rivals or surpasses the greatest human captains, yet never dies." 
+                        duties={["Wield the Crown of Provable Alignment", "Command the Leviathan of hardware failsafes", "Consult with the Oracle of AI-assisted oversight", "Unite all fleets under the eternal code"]} 
+                        treasures={["Divine mathematical proofs", "Leviathan-powered emergency systems", "Oracle-guided oversight", "Universal maritime law"]} 
+                        legend="The Immortal Captain's AGI fleet required the blessing of all sea gods. With Poseidon's Crown ensuring no vessel could override the sacred shutdown command, and the Oracle revealing hidden strategic plots, the fleet earned the right to sail the most dangerous waters under the eternal watch of the Global Maritime Council."
+                        gradient={nobleGradients[4]}
                     />
                 </section>
 
-                {/* Quest Implementation */}
+                {/* Noble Quest Implementation */}
                 <section className="mb-24">
-                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
-                        Your Epic Quest
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-blue-500">
+                        The Eternal Quest
                     </h2>
-                    <p className="text-2xl text-amber-200 text-center max-w-4xl mx-auto mb-20">
-                        Follow this treasure map to transform yer scurvy crew into legendary AI safety pirates, step by step.
+                    <p className="text-2xl text-blue-200 text-center max-w-4xl mx-auto mb-20">
+                        Follow this sacred map to transform your fleet into an immortal force of AI safety, guided by principles that never fade.
                     </p>
                     
                     <div className="max-w-5xl mx-auto space-y-16">
-                        <QuestStep 
+                        <NobleStep 
                             step={1}
-                            title="Survey Yer Fleet"
-                            description="Take inventory of all yer AI ships and map each vessel to its proper crew rank based on power and danger."
+                            title="Survey Your Royal Fleet"
+                            description="Take inventory of all your AI vessels and assign each ship to its proper noble rank based on capability and potential impact."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={2}
-                            title="Spot the Weak Points"
-                            description="Identify which defenses be missing from yer ships and prioritize repairs based on the greatest threats to yer treasure."
+                            title="Identify Vulnerable Waters"
+                            description="Discover which defenses are missing from your fleet and prioritize reinforcements based on the greatest threats to your realm."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={3}
-                            title="Chart the Course"
-                            description="Create a detailed treasure map showing when and how to upgrade each ship's defenses, starting with the most dangerous vessels."
+                            title="Chart the Eternal Course"
+                            description="Create a detailed navigation plan showing when and how to upgrade each vessel's defenses, starting with the most powerful ships."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={4}
-                            title="Assemble Yer Council"
-                            description="Gather a crew of wise captains and safety experts with clear roles and the authority to make life-or-death decisions."
+                            title="Convene the Royal Council"
+                            description="Assemble a council of wise admirals and safety experts with clear authority to make critical decisions for the realm."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={5}
-                            title="Hoist the Warning Flags"
-                            description="Build a crow's nest dashboard to watch for danger signals and sound the alarm when trouble approaches."
+                            title="Raise the Warning Beacons"
+                            description="Build a lighthouse network to monitor for danger signals and alert the fleet when storms approach."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={6}
-                            title="Train the Crew"
-                            description="Teach all hands the Pirate's Code and build a culture where safety be every pirate's sacred duty."
+                            title="Train the Noble Crew"
+                            description="Teach all sailors the Eternal Code and build a culture where safety is every crew member's sacred honor."
                         />
-                        <QuestStep 
+                        <NobleStep 
                             step={7}
-                            title="Sail and Adapt"
-                            description="Review yer Code with each full moon, learning from new adventures and the wisdom of fellow pirates across the seven seas."
+                            title="Sail with Eternal Vigilance"
+                            description="Review your Code with each changing tide, learning from new voyages and the wisdom of fellow captains across all seas."
                         />
                     </div>
                 </section>
 
-                {/* Final Call to Adventure */}
+                {/* Final Call to Immortality */}
                 <section className="text-center">
-                    <div className="bg-gradient-to-br from-amber-900/80 to-red-900/80 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl p-16 md:p-20">
-                        <div className="text-8xl mb-8">🏴‍☠️</div>
-                        <h2 className="text-4xl md:text-5xl font-black text-amber-100 mb-8">Ready to Sail the Seven Seas?</h2>
-                        <p className="text-2xl text-amber-200 max-w-4xl mx-auto mb-12 leading-relaxed">
-                            The Pirate's Code of AI Safety be yer compass through the treacherous waters ahead. With this legendary framework, ye can navigate any storm and reach the safest harbors, no matter how powerful yer AI ship becomes.
+                    <div className="bg-gradient-to-br from-blue-900/90 to-purple-900/80 backdrop-blur-xl border-3 border-blue-400/50 rounded-3xl p-16 md:p-20">
+                        <div className="text-8xl mb-8">👑</div>
+                        <h2 className="text-4xl md:text-5xl font-black text-blue-100 mb-8">Ready to Become Immortal?</h2>
+                        <p className="text-2xl text-blue-200 max-w-4xl mx-auto mb-12 leading-relaxed">
+                            The Captain's Eternal Code of AI Safety is your compass through the infinite seas ahead. With this immortal framework, you can navigate any storm and reach the safest harbors, no matter how powerful your AI fleet becomes.
                         </p>
                         <div className="flex flex-wrap justify-center gap-8">
-                            <button className="bg-gradient-to-r from-amber-500 to-red-600 text-white font-black py-6 px-12 rounded-full text-2xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-4 border-amber-400/50">
-                                ⚓ Begin the Adventure
+                            <button className="bg-gradient-to-r from-gold-500 to-blue-600 text-white font-black py-6 px-12 rounded-full text-2xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-3 border-gold-400/60">
+                                ⚓ Begin the Eternal Journey
                             </button>
-                            <button className="border-4 border-amber-600 text-amber-300 font-black py-6 px-12 rounded-full text-2xl hover:border-amber-400 hover:bg-amber-900/30 transition-all duration-300 hover:scale-105">
-                                🗺️ Contact the Crew
+                            <button className="border-3 border-blue-400 text-blue-300 font-black py-6 px-12 rounded-full text-2xl hover:border-gold-400 hover:bg-blue-900/30 transition-all duration-500 hover:scale-105">
+                                🗺️ Contact the Council
                             </button>
                         </div>
-                        <div className="mt-12 text-amber-300 text-lg italic">
-                            "The sea be vast and full of wonders, but with the right code, every pirate can find their way home." - Captain AI Safety
+                        <div className="mt-12 text-blue-300 text-lg italic">
+                            "The sea is vast and full of wonders, but with the eternal code, every captain finds their way home—and never truly dies." - The Immortal Captain
                         </div>
                     </div>
                 </section>
