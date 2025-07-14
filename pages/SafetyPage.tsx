@@ -1,102 +1,151 @@
 import React from 'react';
 
-const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = "" }) => (
-    <h2 className={`text-3xl md:text-4xl font-bold tracking-tight mt-24 mb-12 text-center ${className}`}>{children}</h2>
+const PirateIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+        <line x1="9" y1="9" x2="9.01" y2="9"/>
+        <line x1="15" y1="9" x2="15.01" y2="9"/>
+        <path d="M12 6l-2 2h4l-2-2z"/>
+    </svg>
 );
 
-const Subheading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <h3 className="text-2xl font-semibold text-gray-100 mt-12 mb-6">{children}</h3>
+const ShipIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <path d="M2 20l20-8-8-2-2-8z"/>
+        <path d="M7 17v5h10v-5"/>
+        <path d="M12 12v8"/>
+        <path d="M5 12l7-7 7 7"/>
+    </svg>
 );
 
-const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
-    <div className="group relative bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+const TreasureIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+    </svg>
+);
+
+const CompassIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
+    </svg>
+);
+
+const AnchorIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <circle cx="12" cy="5" r="3"/>
+        <line x1="12" y1="22" x2="12" y2="8"/>
+        <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+    </svg>
+);
+
+const CannonIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 1v6m0 6v6"/>
+        <path d="M1 12h6m6 0h6"/>
+    </svg>
+);
+
+const PirateCard: React.FC<{ 
+    icon: React.ReactNode; 
+    title: string; 
+    description: string;
+    color: string;
+}> = ({ icon, title, description, color }) => (
+    <div className={`group relative bg-gradient-to-br ${color} p-8 rounded-3xl border-4 border-amber-600/30 transition-all duration-500 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 hover:rotate-1`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-red-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <div className="relative z-10">
-            <div className="w-16 h-16 mb-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+            <div className="w-16 h-16 mb-6 text-amber-300 group-hover:text-amber-200 transition-colors duration-300 group-hover:scale-110 transform">
                 {icon}
             </div>
-            <h4 className="font-bold text-xl text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">{title}</h4>
-            <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+            <h4 className="font-bold text-2xl text-amber-100 mb-4 group-hover:text-white transition-colors duration-300">{title}</h4>
+            <p className="text-amber-200/80 leading-relaxed group-hover:text-amber-100 transition-colors duration-300">{description}</p>
+        </div>
+        <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-amber-900 text-sm font-bold">⚡</span>
         </div>
     </div>
 );
 
-const LevelCard: React.FC<{ 
+const CrewLevelCard: React.FC<{ 
     level: number; 
     title: string; 
-    objective: string; 
-    applicability: string[]; 
-    measures: string[]; 
-    caseStudy: string;
-    color: string;
-}> = ({ level, title, objective, applicability, measures, caseStudy, color }) => (
-    <div className="group relative mb-16 overflow-hidden">
-        {/* Background gradient */}
-        <div className={`absolute inset-0 bg-gradient-to-r ${color} opacity-5 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`}></div>
+    rank: string;
+    description: string; 
+    duties: string[]; 
+    treasures: string[]; 
+    tale: string;
+    shipColor: string;
+}> = ({ level, title, rank, description, duties, treasures, tale, shipColor }) => (
+    <div className="group relative mb-20 overflow-hidden">
+        {/* Treasure map background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-red-900/10 to-amber-800/10 rounded-3xl"></div>
         
-        {/* Main card */}
-        <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-gray-600/70 group-hover:shadow-2xl">
-            {/* Header section */}
-            <div className="relative p-8 pb-6">
-                <div className="flex items-center gap-6 mb-6">
-                    <div className={`flex items-center justify-center w-20 h-20 text-3xl font-black rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}>
+        {/* Main ship card */}
+        <div className="relative bg-gradient-to-br from-amber-900/80 to-red-900/60 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-amber-400 group-hover:shadow-2xl group-hover:shadow-amber-500/20">
+            {/* Ship header */}
+            <div className="relative p-8 pb-6 bg-gradient-to-r from-amber-800/50 to-red-800/50">
+                <div className="flex items-center gap-8 mb-6">
+                    <div className={`flex items-center justify-center w-24 h-24 text-4xl font-black rounded-full bg-gradient-to-br ${shipColor} text-amber-100 shadow-2xl border-4 border-amber-400/50 group-hover:scale-110 transition-transform duration-300`}>
                         {level}
                     </div>
                     <div>
-                        <h3 className="text-3xl font-bold text-white mb-2">{title}</h3>
+                        <div className="flex items-center gap-3 mb-2">
+                            <ShipIcon className="w-8 h-8 text-amber-400" />
+                            <span className="text-amber-300 font-bold text-lg uppercase tracking-wider">{rank}</span>
+                        </div>
+                        <h3 className="text-4xl font-black text-amber-100 mb-2">{title}</h3>
                         <div className="flex items-center gap-2">
-                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${color}`}></div>
-                            <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">Level {level}</span>
+                            <div className="w-3 h-3 rounded-full bg-amber-400 animate-pulse"></div>
+                            <span className="text-amber-200 font-medium">Crew Level {level}</span>
                         </div>
                     </div>
                 </div>
                 
-                {/* Objective */}
-                <div className="bg-gray-800/50 rounded-2xl p-6 mb-6">
-                    <h4 className="font-semibold text-gray-200 mb-3 text-lg flex items-center gap-2">
-                        <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Objective
+                {/* Mission description */}
+                <div className="bg-amber-900/40 rounded-2xl p-6 mb-6 border-2 border-amber-600/30">
+                    <h4 className="font-bold text-amber-200 mb-3 text-xl flex items-center gap-3">
+                        <CompassIcon className="w-6 h-6 text-amber-400" />
+                        The Mission
                     </h4>
-                    <p className="text-gray-300 leading-relaxed">{objective}</p>
+                    <p className="text-amber-100 leading-relaxed text-lg">{description}</p>
                 </div>
             </div>
 
-            {/* Content grid */}
+            {/* Content treasure chests */}
             <div className="px-8 pb-6">
                 <div className="grid lg:grid-cols-2 gap-8">
-                    {/* Applicability */}
+                    {/* Crew Duties */}
                     <div className="space-y-4">
-                        <h4 className="font-semibold text-gray-200 text-lg flex items-center gap-2">
-                            <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                            Applicability
+                        <h4 className="font-bold text-amber-200 text-xl flex items-center gap-3">
+                            <AnchorIcon className="w-6 h-6 text-red-400" />
+                            Crew Duties
                         </h4>
                         <div className="space-y-3">
-                            {applicability.map((item, i) => (
-                                <div key={i} className="flex items-start gap-3 p-3 bg-gray-800/30 rounded-lg">
-                                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${color} mt-2 flex-shrink-0`}></div>
-                                    <span className="text-gray-300 text-sm">{item}</span>
+                            {duties.map((duty, i) => (
+                                <div key={i} className="flex items-start gap-4 p-4 bg-red-900/30 rounded-xl border border-red-600/30 hover:bg-red-900/50 transition-colors duration-300">
+                                    <div className="w-3 h-3 rounded-full bg-red-400 mt-2 flex-shrink-0 animate-pulse"></div>
+                                    <span className="text-amber-100">{duty}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Key Measures */}
+                    {/* Treasure Rewards */}
                     <div className="space-y-4">
-                        <h4 className="font-semibold text-gray-200 text-lg flex items-center gap-2">
-                            <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                            Key Measures
+                        <h4 className="font-bold text-amber-200 text-xl flex items-center gap-3">
+                            <TreasureIcon className="w-6 h-6 text-amber-400" />
+                            Treasure Rewards
                         </h4>
                         <div className="space-y-3">
-                            {measures.map((item, i) => (
-                                <div key={i} className="flex items-start gap-3 p-3 bg-gray-800/30 rounded-lg">
-                                    <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 flex-shrink-0"></div>
-                                    <span className="text-gray-300 text-sm">{item}</span>
+                            {treasures.map((treasure, i) => (
+                                <div key={i} className="flex items-start gap-4 p-4 bg-amber-900/30 rounded-xl border border-amber-600/30 hover:bg-amber-900/50 transition-colors duration-300">
+                                    <div className="w-3 h-3 rounded-full bg-amber-400 mt-2 flex-shrink-0 animate-pulse"></div>
+                                    <span className="text-amber-100">{treasure}</span>
                                 </div>
                             ))}
                         </div>
@@ -104,129 +153,131 @@ const LevelCard: React.FC<{
                 </div>
             </div>
 
-            {/* Case study footer */}
-            <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-sm p-8 border-t border-gray-700/50">
-                <h4 className="font-semibold text-gray-200 mb-4 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                    Case Study Example
+            {/* Pirate tale footer */}
+            <div className="bg-gradient-to-r from-red-900/60 to-amber-900/60 backdrop-blur-sm p-8 border-t-4 border-amber-600/50">
+                <h4 className="font-bold text-amber-200 mb-4 flex items-center gap-3 text-xl">
+                    <PirateIcon className="w-6 h-6 text-amber-400" />
+                    A Pirate's Tale
                 </h4>
-                <p className="text-gray-300 leading-relaxed italic border-l-4 border-yellow-400/30 pl-4">{caseStudy}</p>
+                <p className="text-amber-100 leading-relaxed italic text-lg border-l-4 border-amber-400/50 pl-6">"{tale}"</p>
             </div>
         </div>
     </div>
 );
 
-const StepCard: React.FC<{ step: number; title: string; description: string }> = ({ step, title, description }) => (
+const QuestStep: React.FC<{ step: number; title: string; description: string }> = ({ step, title, description }) => (
     <div className="group relative">
-        <div className="flex items-start gap-6">
-            <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl group-hover:shadow-blue-500/25 transition-all duration-300">
+        <div className="flex items-start gap-8">
+            <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-amber-500 to-red-600 rounded-full flex items-center justify-center text-white font-black text-2xl shadow-2xl border-4 border-amber-400/50 group-hover:shadow-amber-500/50 group-hover:scale-110 transition-all duration-300">
                 {step}
             </div>
-            <div className="flex-1 pt-2">
-                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-100 transition-colors duration-300">{title}</h4>
-                <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+            <div className="flex-1 pt-4">
+                <h4 className="text-2xl font-black text-amber-100 mb-4 group-hover:text-white transition-colors duration-300">{title}</h4>
+                <p className="text-amber-200 leading-relaxed text-lg group-hover:text-amber-100 transition-colors duration-300">{description}</p>
             </div>
         </div>
         {step < 7 && (
-            <div className="absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-blue-500/50 to-transparent"></div>
+            <div className="absolute left-10 top-24 w-1 h-16 bg-gradient-to-b from-amber-500/70 to-transparent"></div>
         )}
     </div>
 );
 
 const SafetyPage: React.FC = () => {
-    const levelColors = [
-        'from-green-500 to-emerald-600',
-        'from-blue-500 to-cyan-600', 
-        'from-purple-500 to-violet-600',
-        'from-orange-500 to-red-600',
-        'from-red-600 to-pink-600'
+    const shipColors = [
+        'from-emerald-600 to-green-700',
+        'from-blue-600 to-cyan-700', 
+        'from-purple-600 to-violet-700',
+        'from-orange-600 to-red-700',
+        'from-red-700 to-pink-700'
     ];
 
     return (
-        <main className="relative min-h-screen">
-            {/* Background elements */}
-            <div className="fixed inset-0 bg-[#111] -z-10"></div>
-            <div className="fixed inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/5 to-pink-900/5 -z-10"></div>
+        <main className="relative min-h-screen overflow-hidden">
+            {/* Pirate ship background */}
+            <div className="fixed inset-0 bg-gradient-to-br from-amber-900/20 via-red-900/30 to-amber-800/20 -z-10"></div>
+            <div className="fixed inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23d97706" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] -z-10"></div>
             
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-                {/* Hero Section */}
+                {/* Pirate Hero Section */}
                 <div className="text-center mb-24">
-                    <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-2 mb-8">
-                        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                        <span className="text-blue-300 font-medium text-sm">AI Safety Framework</span>
+                    <div className="inline-flex items-center gap-3 bg-amber-600/20 border-2 border-amber-500/40 rounded-full px-8 py-3 mb-8">
+                        <PirateIcon className="w-6 h-6 text-amber-400" />
+                        <span className="text-amber-300 font-bold text-lg uppercase tracking-wider">Pirate's Code of AI Safety</span>
                     </div>
                     
-                    <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
-                            Safe AI
+                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-red-500 to-amber-600">
+                            Ahoy Matey!
                         </span>
                         <br />
-                        <span className="text-white">by Design</span>
+                        <span className="text-amber-100">Safe Seas Ahead</span>
                     </h1>
                     
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-                        A comprehensive, scalable framework for managing AI risks—designed to evolve alongside AI capabilities and ensure responsible development at every stage.
+                    <p className="text-2xl md:text-3xl text-amber-200 max-w-4xl mx-auto leading-relaxed mb-12">
+                        Navigate the treacherous waters of AI with our legendary Pirate's Code—a treasure map to safe harbors and protected shores, savvy?
                     </p>
                     
-                    <div className="flex flex-wrap justify-center gap-4 mt-12">
-                        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-2xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1">
-                            Download Framework
+                    <div className="flex flex-wrap justify-center gap-6">
+                        <button className="bg-gradient-to-r from-amber-500 to-red-600 text-white font-black py-4 px-10 rounded-full text-xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-4 border-amber-400/50">
+                            ⚓ Chart Your Course
                         </button>
-                        <button className="border border-gray-600 text-gray-300 font-semibold py-4 px-8 rounded-2xl hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-300">
-                            View Documentation
+                        <button className="border-4 border-amber-600 text-amber-300 font-black py-4 px-10 rounded-full text-xl hover:border-amber-400 hover:bg-amber-900/30 transition-all duration-300 hover:scale-105">
+                            🗺️ View Treasure Map
                         </button>
                     </div>
                 </div>
 
-                {/* Stats Section */}
+                {/* Pirate Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
                     {[
-                        { number: '5', label: 'Safety Levels', color: 'text-blue-400' },
-                        { number: '8', label: 'Core Principles', color: 'text-purple-400' },
-                        { number: '100+', label: 'Safety Measures', color: 'text-green-400' },
-                        { number: '∞', label: 'Scalability', color: 'text-pink-400' }
+                        { number: '5', label: 'Crew Ranks', icon: '⚓', color: 'text-amber-400' },
+                        { number: '8', label: 'Sacred Laws', icon: '📜', color: 'text-red-400' },
+                        { number: '100+', label: 'Safety Treasures', icon: '💎', color: 'text-emerald-400' },
+                        { number: '∞', label: 'Adventure Awaits', icon: '🏴‍☠️', color: 'text-purple-400' }
                     ].map((stat, i) => (
                         <div key={i} className="text-center group">
-                            <div className={`text-4xl md:text-5xl font-black ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className="text-6xl mb-2 group-hover:scale-125 transition-transform duration-300">
+                                {stat.icon}
+                            </div>
+                            <div className={`text-5xl md:text-6xl font-black ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
                                 {stat.number}
                             </div>
-                            <div className="text-gray-400 font-medium">{stat.label}</div>
+                            <div className="text-amber-200 font-bold text-lg">{stat.label}</div>
                         </div>
                     ))}
                 </div>
 
-                {/* Introduction */}
+                {/* Pirate's Code Introduction */}
                 <section className="mb-24">
-                    <SectionTitle>Why This Framework Matters</SectionTitle>
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <p className="text-lg text-gray-300 leading-relaxed">
-                                As AI capabilities rapidly advance, the stakes for getting safety right have never been higher. From simple automation to potentially transformative AGI, each leap forward demands proportional increases in our safety measures.
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
+                        The Pirate's Code
+                    </h2>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8">
+                            <p className="text-2xl text-amber-200 leading-relaxed">
+                                Arrr! Every good pirate knows that the seas be dangerous, and the same be true for the waters of artificial intelligence, savvy?
                             </p>
-                            <p className="text-lg text-gray-300 leading-relaxed">
-                                This framework provides a structured, scalable approach to AI safety—ensuring that as your systems become more capable, your safeguards evolve to match. No more guesswork, no more reactive measures.
+                            <p className="text-2xl text-amber-200 leading-relaxed">
+                                Our legendary Code ensures that as yer AI ship grows more powerful, yer defenses grow stronger too. No scurvy dog wants their vessel to run aground on the rocks of reckless AI!
                             </p>
                         </div>
                         <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
-                            <div className="relative bg-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8">
-                                <h4 className="text-xl font-bold text-white mb-6">Framework Benefits</h4>
-                                <div className="space-y-4">
+                            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-red-500/30 rounded-3xl blur-2xl"></div>
+                            <div className="relative bg-gradient-to-br from-amber-900/80 to-red-900/60 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl p-8">
+                                <h4 className="text-2xl font-black text-amber-100 mb-8 flex items-center gap-3">
+                                    <TreasureIcon className="w-8 h-8 text-amber-400" />
+                                    Pirate's Treasures
+                                </h4>
+                                <div className="space-y-6">
                                     {[
-                                        'Proactive risk management',
-                                        'Clear implementation roadmap',
-                                        'Scalable safety measures',
-                                        'Industry-standard compliance'
-                                    ].map((benefit, i) => (
-                                        <div key={i} className="flex items-center gap-3">
-                                            <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                            </svg>
-                                            <span className="text-gray-300">{benefit}</span>
+                                        '🏴‍☠️ Fearless risk navigation',
+                                        '🗺️ Clear treasure map to safety',
+                                        '⚓ Scalable ship defenses',
+                                        '🏆 Legendary crew standards'
+                                    ].map((treasure, i) => (
+                                        <div key={i} className="flex items-center gap-4">
+                                            <div className="text-2xl">{treasure.split(' ')[0]}</div>
+                                            <span className="text-amber-200 text-lg">{treasure.substring(2)}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -235,204 +286,194 @@ const SafetyPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Core Principles */}
+                {/* Pirate Principles */}
                 <section className="mb-24">
-                    <SectionTitle>Core Principles</SectionTitle>
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
+                        Sacred Laws of the Sea
+                    </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            }
-                            title="Capability-Risk Alignment"
-                            description="Safety requirements automatically scale with model capability, ensuring protection grows with power."
+                        <PirateCard
+                            icon={<CompassIcon className="w-full h-full" />}
+                            title="Navigate by the Stars"
+                            description="Chart yer course with capability and risk as yer guiding stars, ensuring safe passage through treacherous waters."
+                            color="from-blue-800 to-cyan-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                </svg>
-                            }
-                            title="Clear Thresholds"
-                            description="Measurable triggers and benchmarks signal when to transition to the next safety tier."
+                        <PirateCard
+                            icon={<AnchorIcon className="w-full h-full" />}
+                            title="Drop Anchor When Needed"
+                            description="Know when to stop and secure yer ship—clear warning signals tell ye when danger lurks ahead."
+                            color="from-emerald-800 to-green-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                </svg>
-                            }
-                            title="Layered Safeguards"
-                            description="Multiple complementary defense mechanisms work together to prevent failures."
+                        <PirateCard
+                            icon={<CannonIcon className="w-full h-full" />}
+                            title="Multiple Cannons Ready"
+                            description="Never rely on a single defense—layer yer protections like a seasoned captain layers his armor."
+                            color="from-purple-800 to-violet-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            }
-                            title="Rigorous Evaluation"
-                            description="Comprehensive testing including adversarial probes and expert red teaming."
+                        <PirateCard
+                            icon={<ShipIcon className="w-full h-full" />}
+                            title="Test Yer Ship's Mettle"
+                            description="Battle-test yer vessel against the fiercest storms and craftiest enemies before setting sail."
+                            color="from-red-800 to-pink-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                            }
-                            title="Accountable Governance"
-                            description="Clear oversight bodies with defined roles and decision-making authority."
+                        <PirateCard
+                            icon={<TreasureIcon className="w-full h-full" />}
+                            title="Captain's Council"
+                            description="Assemble a crew of wise captains to guide yer decisions and keep ye on the righteous path."
+                            color="from-amber-800 to-orange-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            }
-                            title="Continuous Monitoring"
-                            description="Real-time telemetry and automated alerts track model behavior in production."
+                        <PirateCard
+                            icon={<PirateIcon className="w-full h-full" />}
+                            title="Keep Watch Always"
+                            description="Post lookouts day and night—constant vigilance keeps yer ship safe from unexpected threats."
+                            color="from-indigo-800 to-blue-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            }
-                            title="Transparent Reporting"
-                            description="Comprehensive documentation of assessments, incidents, and mitigation steps."
+                        <PirateCard
+                            icon={<CompassIcon className="w-full h-full" />}
+                            title="Log Every Adventure"
+                            description="Record every battle, every storm, every lesson learned—knowledge be the greatest treasure."
+                            color="from-teal-800 to-cyan-900"
                         />
-                        <FeatureCard
-                            icon={
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                                </svg>
-                            }
-                            title="Research Integration"
-                            description="Stay current with latest AI safety research and incorporate new findings."
+                        <PirateCard
+                            icon={<AnchorIcon className="w-full h-full" />}
+                            title="Share the Bounty"
+                            description="Share yer discoveries with fellow pirates—together we make the seas safer for all."
+                            color="from-rose-800 to-red-900"
                         />
                     </div>
                 </section>
 
-                {/* The Five Levels */}
+                {/* The Five Crew Ranks */}
                 <section className="mb-24">
-                    <SectionTitle>The Five Safety Levels</SectionTitle>
-                    <p className="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16">
-                        Each level builds upon the previous, creating a comprehensive safety ecosystem that scales with AI capability.
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
+                        The Five Crew Ranks
+                    </h2>
+                    <p className="text-2xl text-amber-200 text-center max-w-4xl mx-auto mb-20">
+                        From lowly deck swabber to legendary Pirate King—each rank brings greater responsibility and mightier defenses for yer AI vessel.
                     </p>
 
-                    <LevelCard 
+                    <CrewLevelCard 
                         level={1} 
-                        title="Foundational Safety" 
-                        objective="Implement basic controls to prevent trivial failures and obvious misuse in narrow, low-impact systems." 
-                        applicability={["Rule-based classification APIs", "Simple Q&A bots with closed knowledge bases", "Recommendation engines with limited scope"]} 
-                        measures={["Input Validation & Output Constraints", "Access Controls & Authentication", "Unit Tests & Manual Reviews", "Documentation & Onboarding"]} 
-                        caseStudy="A retail company deploys a Level 1 sentiment analysis API to filter customer reviews. By enforcing profanity filters, logging every API call, and limiting access to internal clients, the team prevents both malicious inputs and accidental leakage of user data."
-                        color={levelColors[0]}
+                        title="Deck Swabber" 
+                        rank="Cabin Boy"
+                        description="Learn the ropes and keep the ship tidy—basic duties for simple AI tasks that won't sink the ship if they go awry." 
+                        duties={["Swab the decks with input validation", "Tie down loose cannons with access controls", "Keep watch with basic logging", "Follow the ship's rules and documentation"]} 
+                        treasures={["Clean ship operations", "Protected cargo holds", "Simple but effective defenses", "Clear sailing instructions"]} 
+                        tale="Young Billy started as a deck swabber on Captain Morgan's sentiment analysis ship. By keeping the decks clean of profanity and logging every visitor, he prevented scurvy pirates from corrupting the ship's precious cargo of customer reviews."
+                        shipColor={shipColors[0]}
                     />
 
-                    <LevelCard 
+                    <CrewLevelCard 
                         level={2} 
-                        title="Enhanced Safety for Interactive Systems" 
-                        objective="Introduce moderate adversarial defenses and basic monitoring to address common risks in interactive, generative, or conversational applications." 
-                        applicability={["Entry‑level chatbots with domain constraints", "Constrained virtual assistants", "Simple generative tools"]} 
-                        measures={["Robust Filtering & Refusal Triggers", "Sandboxing & Anomaly Detection", "Basic Red Teaming", "Incident Response Planning"]} 
-                        caseStudy="A financial services chatbot at Level 2 employs semantic detection to refuse queries requesting investment advice. All code snippets are sandboxed, and alerts notify security if anomalous resource consumption occurs. Basic red teaming uncovers a prompt bypass; the fix is rolled out within 48 hours."
-                        color={levelColors[1]}
+                        title="Able Seaman" 
+                        rank="Crew Member"
+                        description="Handle the rigging and defend against boarding parties—moderate skills for interactive AI that talks back to landlubbers." 
+                        duties={["Man the defensive cannons with robust filtering", "Watch for enemy ships with anomaly detection", "Practice sword fighting with red team exercises", "Prepare for battle with incident response plans"]} 
+                        treasures={["Battle-tested defenses", "Enemy detection systems", "Crew combat training", "Emergency battle protocols"]} 
+                        tale="Seaman Sarah sailed with the Chatbot Revenge, where her quick thinking with semantic filters saved the day when crafty pirates tried to trick the ship into giving away the captain's treasure map of investment secrets."
+                        shipColor={shipColors[1]}
                     />
 
-                    <LevelCard 
+                    <CrewLevelCard 
                         level={3} 
-                        title="Substantial Safety for Capable Systems" 
-                        objective="Defend against sophisticated misuse, integrate human oversight for high‑stakes actions, and deepen adversarial resilience." 
-                        applicability={["Advanced conversational agents", "Media and code generation tools", "Systems accessing external data"]} 
-                        measures={["Constitutional‑Style Jailbreak Defenses", "Behavioral Monitoring", "Expert Red Teaming & Ethical Review", "Formal Safety Cases"]} 
-                        caseStudy="A healthcare assistant at Level 3 provides medical literature summaries. Using a constitutional AI approach, it refuses requests for personalized diagnoses. An external panel of medical and AI safety experts reviews test logs and endorses the system's safety case before it goes live."
-                        color={levelColors[2]}
+                        title="Quartermaster" 
+                        rank="Ship's Officer"
+                        description="Manage the crew and coordinate defenses—seasoned skills for capable AI that can generate powerful magic (code and content)." 
+                        duties={["Command defensive formations with constitutional AI", "Monitor crew behavior and ship performance", "Lead expert boarding parties for red team attacks", "Write the ship's safety charter and battle plans"]} 
+                        treasures={["Advanced battle formations", "Crew performance insights", "Expert warrior consultations", "Formal ship safety documentation"]} 
+                        tale="Quartermaster Quinn commanded the HMS Code Generator, where constitutional AI principles helped the ship refuse dangerous requests for personalized medical spells, earning praise from the Royal Navy of Medical Experts."
+                        shipColor={shipColors[2]}
                     />
 
-                    <LevelCard 
+                    <CrewLevelCard 
                         level={4} 
-                        title="Advanced Safety for Near‑Frontier Systems" 
-                        objective="Anticipate and mitigate emergent behaviors in general‑purpose systems nearing human‑level performance." 
-                        applicability={["Multi‑modal models (text, vision, audio)", "Large foundation models", "Experimental agentic systems"]} 
-                        measures={["Scaled Constitutional AI & RLHF", "Mechanistic Interpretability", "External Expert Validation", "Regulatory Coordination"]} 
-                        caseStudy="A lab's multimodal reasoning engine reaches near-human benchmarks. Mechanistic interpretability reveals potential corruption of planning circuits; predictive detectors flag these cases. After an external AI safety audit, the team updates RLHF policies and secures compliance certification."
-                        color={levelColors[3]}
+                        title="First Mate" 
+                        rank="Ship's Commander"
+                        description="Navigate uncharted waters and command the fleet—master-level skills for near-legendary AI approaching the power of the ancient sea gods." 
+                        duties={["Navigate by the mystical stars of interpretability", "Command multi-ship fleets with coordination protocols", "Consult with the Admiralty for external validation", "Negotiate with port authorities for regulatory approval"]} 
+                        treasures={["Mystical navigation tools", "Fleet command capabilities", "Admiralty endorsements", "Royal port permissions"]} 
+                        tale="First Mate Blackbeard's multimodal reasoning fleet discovered corrupted planning charts in their navigation system. Using mystical interpretability tools, they detected the corruption and earned the blessing of the AI Safety Admiralty."
+                        shipColor={shipColors[3]}
                     />
 
-                    <LevelCard 
+                    <CrewLevelCard 
                         level={5} 
-                        title="AGI‑Level Safety" 
-                        objective="Manage existential and systemic risks posed by systems at or beyond human intelligence—ensuring provable control and global governance." 
-                        applicability={["Experimental AGI prototypes", "Agentic systems with strategic planning", "Large-scale multi‑agent ecosystems"]} 
-                        measures={["Provably Robust Alignment", "Hardware & Network Failsafes", "AI‑Assisted Oversight", "Global Governance"]} 
-                        caseStudy="A consortium collaborates on an AGI testbed. Formal methods verify the system cannot override shutdown commands. Red team exercises simulate strategic scenarios, revealing hidden incentives that are then mathematically neutralized. A global governance council reviews logs, ensuring transparency."
-                        color={levelColors[4]}
+                        title="Pirate King" 
+                        rank="Legendary Captain"
+                        description="Rule the seven seas and command the power of Poseidon himself—godlike skills for AI that rivals or surpasses the greatest human captains." 
+                        duties={["Wield the Trident of Provable Alignment", "Command the Kraken of hardware failsafes", "Consult with Poseidon's AI-assisted oracle", "Unite all pirate fleets under one code"]} 
+                        treasures={["Divine mathematical proofs", "Kraken-powered emergency stops", "Oracle-guided oversight", "Universal pirate law"]} 
+                        tale="The legendary Pirate King's AGI fleet required the blessing of all sea gods. With Poseidon's Trident ensuring no ship could override the sacred shutdown command, and the Oracle revealing hidden strategic plots, the fleet earned the right to sail the most dangerous waters under the watchful eye of the Global Pirate Council."
+                        shipColor={shipColors[4]}
                     />
                 </section>
 
-                {/* Implementation Guide */}
+                {/* Quest Implementation */}
                 <section className="mb-24">
-                    <SectionTitle>Implementation Roadmap</SectionTitle>
-                    <p className="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16">
-                        Follow these steps to implement the framework in your organization, from initial assessment to full deployment.
+                    <h2 className="text-5xl md:text-6xl font-black text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">
+                        Your Epic Quest
+                    </h2>
+                    <p className="text-2xl text-amber-200 text-center max-w-4xl mx-auto mb-20">
+                        Follow this treasure map to transform yer scurvy crew into legendary AI safety pirates, step by step.
                     </p>
                     
-                    <div className="max-w-4xl mx-auto space-y-12">
-                        <StepCard 
+                    <div className="max-w-5xl mx-auto space-y-16">
+                        <QuestStep 
                             step={1}
-                            title="Capability Assessment"
-                            description="Catalog your AI projects and map each to the corresponding safety level based on capability and risk profile."
+                            title="Survey Yer Fleet"
+                            description="Take inventory of all yer AI ships and map each vessel to its proper crew rank based on power and danger."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={2}
-                            title="Gap Analysis"
-                            description="Identify required safety measures that are not yet implemented and prioritize them by risk level and implementation complexity."
+                            title="Spot the Weak Points"
+                            description="Identify which defenses be missing from yer ships and prioritize repairs based on the greatest threats to yer treasure."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={3}
-                            title="Roadmap Development"
-                            description="Create a detailed timeline for implementing missing safeguards, starting with the highest-risk projects and critical dependencies."
+                            title="Chart the Course"
+                            description="Create a detailed treasure map showing when and how to upgrade each ship's defenses, starting with the most dangerous vessels."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={4}
-                            title="Governance Structure"
-                            description="Establish safety review committees with clear roles, responsibilities, and decision-making authority for each safety level."
+                            title="Assemble Yer Council"
+                            description="Gather a crew of wise captains and safety experts with clear roles and the authority to make life-or-death decisions."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={5}
-                            title="Measurement & Monitoring"
-                            description="Build comprehensive dashboards to track key safety metrics and set up automated alerting for threshold breaches."
+                            title="Hoist the Warning Flags"
+                            description="Build a crow's nest dashboard to watch for danger signals and sound the alarm when trouble approaches."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={6}
-                            title="Training & Culture"
-                            description="Educate all teams on the framework principles and foster a culture of 'safety by design' throughout the organization."
+                            title="Train the Crew"
+                            description="Teach all hands the Pirate's Code and build a culture where safety be every pirate's sacred duty."
                         />
-                        <StepCard 
+                        <QuestStep 
                             step={7}
-                            title="Iterate & Evolve"
-                            description="Review framework thresholds and measures quarterly, incorporating new safety research and lessons learned from incidents."
+                            title="Sail and Adapt"
+                            description="Review yer Code with each full moon, learning from new adventures and the wisdom of fellow pirates across the seven seas."
                         />
                     </div>
                 </section>
 
-                {/* Conclusion */}
+                {/* Final Call to Adventure */}
                 <section className="text-center">
-                    <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-12 md:p-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Ready to Build Safer AI?</h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-                            The Five-Level AI Safety Framework empowers organizations to navigate the advancing frontier of AI responsibly. By aligning safety requirements with capability, this framework ensures that technological progress remains firmly in service of human well-being.
+                    <div className="bg-gradient-to-br from-amber-900/80 to-red-900/80 backdrop-blur-xl border-4 border-amber-600/50 rounded-3xl p-16 md:p-20">
+                        <div className="text-8xl mb-8">🏴‍☠️</div>
+                        <h2 className="text-4xl md:text-5xl font-black text-amber-100 mb-8">Ready to Sail the Seven Seas?</h2>
+                        <p className="text-2xl text-amber-200 max-w-4xl mx-auto mb-12 leading-relaxed">
+                            The Pirate's Code of AI Safety be yer compass through the treacherous waters ahead. With this legendary framework, ye can navigate any storm and reach the safest harbors, no matter how powerful yer AI ship becomes.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-2xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1">
-                                Start Implementation
+                        <div className="flex flex-wrap justify-center gap-8">
+                            <button className="bg-gradient-to-r from-amber-500 to-red-600 text-white font-black py-6 px-12 rounded-full text-2xl hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border-4 border-amber-400/50">
+                                ⚓ Begin the Adventure
                             </button>
-                            <button className="border border-gray-600 text-gray-300 font-semibold py-4 px-8 rounded-2xl hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-300">
-                                Contact Our Team
+                            <button className="border-4 border-amber-600 text-amber-300 font-black py-6 px-12 rounded-full text-2xl hover:border-amber-400 hover:bg-amber-900/30 transition-all duration-300 hover:scale-105">
+                                🗺️ Contact the Crew
                             </button>
+                        </div>
+                        <div className="mt-12 text-amber-300 text-lg italic">
+                            "The sea be vast and full of wonders, but with the right code, every pirate can find their way home." - Captain AI Safety
                         </div>
                     </div>
                 </section>
