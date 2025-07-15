@@ -216,7 +216,7 @@ const SafetyPage: React.FC = () => {
                   'Unyielding safety tenets',
                   'Cunning navigational wisdom',
                   'Stalwart protective measures',
-                  'Legendary pirate's honor'
+                  "Legendary pirate's honor"
                 ].map((pillar, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-[#FFD700]"></div>
@@ -326,7 +326,7 @@ const SafetyPage: React.FC = () => {
             title="First Mate"
             rank="Officer Rank"
             description="Command ship operations and rally defenses—advanced skills for AI crafting powerful artifacts."
-            duties=[
+            duties={[
               "Enforce the pirate's constitution",
               "Oversee ship performance and tuning",
               "Lead expert defense drills",
