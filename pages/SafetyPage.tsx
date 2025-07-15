@@ -344,5 +344,3 @@ export default function SafetyPage() {
     </main>
   );
 }
-
-export default SafetyPage;
