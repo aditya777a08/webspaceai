@@ -447,3 +447,5 @@ const SafetyPage: React.FC = () => {
     </main>
   );
 };
+
+export default SafetyPage;
