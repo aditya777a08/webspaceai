@@ -248,35 +248,6 @@ const SafetyPage: React.FC = () => {
               Pioneering comprehensive AI safety standards through elegant frameworks, 
               rigorous testing, and unwavering commitment to human-centered design.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <span>Explore Framework</span>
-              </button>
-              <button className="group px-8 py-4 border border-white/30 text-white rounded-full font-medium hover:bg-white/10 hover:border-white/50 transition-all duration-300">
-                <span>Documentation</span>
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Elegant statistics */}
-        <section className="py-24">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
-            {[
-              { number: 99, suffix: '%', label: 'Safety Accuracy', icon: <ShieldIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
-              { number: 24, suffix: '/7', label: 'Monitoring', icon: <EyeIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
-              { number: 500, suffix: '+', label: 'Safety Checks', icon: <CheckIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
-              { number: 5, suffix: '', label: 'Safety Levels', icon: <StarIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> }
-            ].map((stat, i) => (
-              <div key={i} className="group hover:scale-110 transition-all duration-500">
-                {stat.icon}
-                <StatCounter end={stat.number} suffix={stat.suffix} />
-                <div className="text-gray-400 font-light text-lg mt-2 group-hover:text-gray-300 transition-colors">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
