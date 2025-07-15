@@ -88,25 +88,26 @@ interface PrincipleCardProps {
   title: string;
   description: string;
   delay?: number;
+  className?: string;
 }
 
-const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, title, description, delay = 0 }) => {
+const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, title, description, delay = 0, className = "" }) => {
   const { ref, isVisible } = useRevealOnScroll(delay);
 
   return (
     <div
       ref={ref}
-      className={`group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-2 ${
+      className={`group p-6 md:p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-2 ${className} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <div className="w-16 h-16 mb-6 text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-500">
+      <div className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-500">
         {icon}
       </div>
-      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-white transition-colors">
+      <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 group-hover:text-white transition-colors">
         {title}
       </h3>
-      <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+      <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
         {description}
       </p>
     </div>
@@ -263,54 +264,62 @@ const SafetyPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-fr">
             <PrincipleCard
               icon={<ShieldIcon className="w-full h-full" />}
               title="Security First"
               description="Comprehensive protection against threats, vulnerabilities, and misuse through proactive security measures."
               delay={0}
+              className="md:col-span-2 md:row-span-2"
             />
             <PrincipleCard
               icon={<HeartIcon className="w-full h-full" />}
               title="Human-Centered"
               description="Designing AI systems that enhance human capabilities while respecting human values and autonomy."
               delay={100}
+              className="md:col-span-2 md:row-span-1"
             />
             <PrincipleCard
               icon={<EyeIcon className="w-full h-full" />}
               title="Transparency"
               description="Clear, explainable AI behavior with comprehensive monitoring and auditing capabilities."
               delay={200}
+              className="md:col-span-2 md:row-span-1"
             />
             <PrincipleCard
               icon={<CheckIcon className="w-full h-full" />}
               title="Reliability"
               description="Consistent, predictable performance with robust testing and validation protocols."
               delay={300}
+              className="md:col-span-1 md:row-span-1"
             />
             <PrincipleCard
               icon={<LockIcon className="w-full h-full" />}
               title="Privacy Protection"
               description="Safeguarding personal data and ensuring user privacy through advanced encryption and access controls."
               delay={400}
+              className="md:col-span-1 md:row-span-1"
             />
             <PrincipleCard
               icon={<TrendingUpIcon className="w-full h-full" />}
               title="Continuous Improvement"
               description="Iterative enhancement based on feedback, research, and evolving safety standards."
               delay={500}
+              className="md:col-span-2 md:row-span-1"
             />
             <PrincipleCard
               icon={<UsersIcon className="w-full h-full" />}
               title="Collaborative Governance"
               description="Multi-stakeholder approach involving experts, users, and communities in safety decisions."
               delay={600}
+              className="md:col-span-2 md:row-span-1"
             />
             <PrincipleCard
               icon={<StarIcon className="w-full h-full" />}
               title="Excellence"
               description="Commitment to the highest standards of quality, ethics, and responsible AI development."
               delay={700}
+              className="md:col-span-2 md:row-span-1"
             />
           </div>
         </section>
