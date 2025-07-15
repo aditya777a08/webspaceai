@@ -1,301 +1,152 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Stunning Icon Components with Animations
+// Elegant, timeless icons
 const ShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     <path d="M9 12l2 2 4-4"/>
   </svg>
 );
 
-const BrainIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
-    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
-  </svg>
-);
-
 const EyeIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
     <circle cx="12" cy="12" r="3"/>
   </svg>
 );
 
-const ZapIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
+    <polyline points="20,6 9,17 4,12"/>
   </svg>
 );
 
-const NetworkIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <circle cx="12" cy="12" r="2"/>
-    <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
+    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/>
+  </svg>
+);
+
+const HeartIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
   </svg>
 );
 
 const LockIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
     <circle cx="12" cy="16" r="1"/>
     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
   </svg>
 );
 
-const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/>
+const TrendingUpIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
+    <polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/>
+    <polyline points="17,6 23,6 23,12"/>
   </svg>
 );
 
-const RocketIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-    <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+const UsersIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className}>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
   </svg>
 );
 
-// Animated Background Component
-const AnimatedBackground: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+// Elegant reveal animation hook
+const useRevealOnScroll = (delay = 0) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-    }> = [];
-
-    // Create particles
-    for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.2,
-      });
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    return () => observer.disconnect();
+  }, [delay]);
 
-      particles.forEach((particle, i) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
-        ctx.fill();
-
-        // Draw connections
-        particles.slice(i + 1).forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
-            ctx.stroke();
-          }
-        });
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-30"
-      style={{ zIndex: 1 }}
-    />
-  );
+  return { ref, isVisible };
 };
 
-// Floating Action Button
-const FloatingActionButton: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  return (
-    <button
-      className={`fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-blue-500/25 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-      }`}
-      onClick={scrollToTop}
-    >
-      <RocketIcon className="w-6 h-6 mx-auto" />
-    </button>
-  );
-};
-
-// Principle Card with Stunning Animations
+// Elegant principle card
 interface PrincipleCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  gradient: string;
-  delay: number;
+  delay?: number;
 }
 
-const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, title, description, gradient, delay }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [delay]);
+const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, title, description, delay = 0 }) => {
+  const { ref, isVisible } = useRevealOnScroll(delay);
 
   return (
     <div
-      ref={cardRef}
-      className={`group relative overflow-hidden rounded-3xl p-8 transition-all duration-700 transform ${
-        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-      } hover:scale-105 hover:-translate-y-2`}
-      style={{
-        background: `linear-gradient(135deg, ${gradient})`,
-        boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-      }}
+      ref={ref}
+      className={`group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-2 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10">
-        <div className="w-16 h-16 mb-6 text-white transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-          {icon}
-        </div>
-        <h4 className="font-bold text-2xl text-white mb-4 group-hover:text-yellow-200 transition-colors duration-300">
-          {title}
-        </h4>
-        <p className="text-white/90 leading-relaxed group-hover:text-white transition-colors duration-300">
-          {description}
-        </p>
+      <div className="w-16 h-16 mb-6 text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-500">
+        {icon}
       </div>
-      <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-white/5 rounded-full transform group-hover:scale-150 transition-transform duration-700" />
+      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-white transition-colors">
+        {title}
+      </h3>
+      <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+        {description}
+      </p>
     </div>
   );
 };
 
-// Level Card with Epic Animations
-interface LevelCardProps {
+// Elegant level component
+interface SafetyLevelProps {
   level: number;
   title: string;
   description: string;
   features: string[];
-  gradient: string;
-  delay: number;
+  delay?: number;
 }
 
-const LevelCard: React.FC<LevelCardProps> = ({ level, title, description, features, gradient, delay }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const SafetyLevel: React.FC<SafetyLevelProps> = ({ level, title, description, features, delay = 0 }) => {
+  const { ref, isVisible } = useRevealOnScroll(delay);
   const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [delay]);
 
   return (
     <div
-      ref={cardRef}
-      className={`relative overflow-hidden rounded-3xl transition-all duration-700 transform ${
+      ref={ref}
+      className={`transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-      } ${isExpanded ? 'scale-105' : 'hover:scale-102'}`}
-      style={{
-        background: `linear-gradient(135deg, ${gradient})`,
-        boxShadow: isExpanded ? '0 30px 60px rgba(0,0,0,0.3)' : '0 20px 40px rgba(0,0,0,0.1)',
-      }}
+      }`}
     >
-      <div className="p-8">
-        <div className="flex items-center gap-6 mb-6">
-          <div className="flex items-center justify-center w-20 h-20 text-3xl font-bold rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-            {level}
-          </div>
-          <div className="flex-1">
-            <h3 className="text-3xl font-bold text-white mb-2">{title}</h3>
-            <p className="text-white/80">{description}</p>
+      <div className="group p-8 rounded-2xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:from-white/10 hover:to-white/15 hover:border-white/20 transition-all duration-500">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/10 border border-white/20 text-2xl font-bold text-white">
+              {level}
+            </div>
+            <div>
+              <h3 className="text-3xl font-semibold text-white mb-2">{title}</h3>
+              <p className="text-gray-300">{description}</p>
+            </div>
           </div>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
+            className="w-12 h-12 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
           >
             <span className={`block transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
               ↓
@@ -304,17 +155,19 @@ const LevelCard: React.FC<LevelCardProps> = ({ level, title, description, featur
         </div>
         
         <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="space-y-3 pt-4 border-t border-white/20">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 p-3 bg-white/10 rounded-xl backdrop-blur-sm transform transition-all duration-300 hover:bg-white/20 hover:translate-x-2"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="w-2 h-2 rounded-full bg-white"></div>
-                <span className="text-white/90">{feature}</span>
-              </div>
-            ))}
+          <div className="pt-6 border-t border-white/10">
+            <div className="grid gap-3">
+              {features.map((feature, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300"
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <CheckIcon className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-gray-200">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -322,127 +175,104 @@ const LevelCard: React.FC<LevelCardProps> = ({ level, title, description, featur
   );
 };
 
-// Stats Counter Component
-const StatsCounter: React.FC<{ end: number; duration: number; suffix?: string }> = ({ end, duration, suffix = '' }) => {
+// Elegant stats counter
+const StatCounter: React.FC<{ end: number; suffix?: string; duration?: number }> = ({ 
+  end, 
+  suffix = '', 
+  duration = 2000 
+}) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const counterRef = useRef<HTMLDivElement>(null);
+  const [hasStarted, setHasStarted] = useState(false);
+  const { ref, isVisible } = useRevealOnScroll();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-          let start = 0;
-          const increment = end / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= end) {
-              setCount(end);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
+    if (isVisible && !hasStarted) {
+      setHasStarted(true);
+      let start = 0;
+      const increment = end / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
         }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+      }, 16);
     }
-
-    return () => observer.disconnect();
-  }, [end, duration, isVisible]);
+  }, [isVisible, hasStarted, end, duration]);
 
   return (
-    <div ref={counterRef} className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+    <div ref={ref} className="text-5xl md:text-6xl font-light text-white">
       {count}{suffix}
     </div>
   );
 };
 
 const SafetyPage: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <main className="relative bg-[#111] text-gray-200 min-h-screen overflow-hidden">
-      <AnimatedBackground />
-      <FloatingActionButton />
-      
-      {/* Mouse Follower */}
-      <div
-        className="fixed w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100"
-        style={{
-          left: mousePosition.x - 12,
-          top: mousePosition.y - 12,
-          transform: 'scale(0.8)',
-        }}
-      />
+      {/* Subtle background texture */}
+      <div className="fixed inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent" />
+        <div 
+          className="absolute inset-0 bg-gradient-to-t from-transparent via-white/[0.01] to-transparent"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 xl:px-24 py-16">
-        {/* Epic Hero Section */}
-        <div className="text-center mb-32 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-full blur-3xl transform scale-150" />
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20 rounded-full px-8 py-4 mb-12 transform hover:scale-105 transition-all duration-300">
-              <ShieldIcon className="w-6 h-6 text-white animate-pulse" />
-              <span className="text-white font-medium text-lg uppercase tracking-wider">Next-Gen AI Safety</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 xl:px-24">
+        {/* Breathtaking hero section */}
+        <section ref={heroRef} className="min-h-screen flex items-center justify-center text-center py-20">
+          <div className="max-w-5xl mx-auto">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-12 hover:bg-white/20 transition-all duration-500">
+              <ShieldIcon className="w-5 h-5 text-white" />
+              <span className="text-white font-medium tracking-wide">AI Safety Framework</span>
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-black tracking-tight mb-12 leading-none">
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-                FUTURE
-              </span>
-              <span className="block text-white transform hover:scale-105 transition-transform duration-500">
-                PROOF
-              </span>
-              <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                SAFETY
-              </span>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin tracking-tight mb-8 leading-none">
+              <span className="block text-white mb-4">The Future</span>
+              <span className="block text-white/60">of Safety</span>
             </h1>
             
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed mb-16 transform hover:scale-105 transition-all duration-300">
-              Revolutionary AI safety framework that adapts, evolves, and protects humanity's future through cutting-edge technology and uncompromising standards.
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12 font-light">
+              Pioneering comprehensive AI safety standards through elegant frameworks, 
+              rigorous testing, and unwavering commitment to human-centered design.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-6">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-6 px-12 rounded-full text-xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25">
-                <span className="relative z-10">Launch Experience</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="group px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <span>Explore Framework</span>
               </button>
-              <button className="group border-2 border-white/30 text-white font-bold py-6 px-12 rounded-full text-xl hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-110 backdrop-blur-sm">
-                Explore Framework
+              <button className="group px-8 py-4 border border-white/30 text-white rounded-full font-medium hover:bg-white/10 hover:border-white/50 transition-all duration-300">
+                <span>Documentation</span>
               </button>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Mind-Blowing Stats */}
-        <section className="mb-32">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+        {/* Elegant statistics */}
+        <section className="py-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
             {[
-              { number: 99, suffix: '%', label: 'Safety Accuracy', icon: <ShieldIcon className="w-12 h-12" /> },
-              { number: 24, suffix: '/7', label: 'AI Monitoring', icon: <EyeIcon className="w-12 h-12" /> },
-              { number: 1000, suffix: '+', label: 'Safety Protocols', icon: <LockIcon className="w-12 h-12" /> },
-              { number: 5, suffix: '', label: 'Safety Levels', icon: <StarIcon className="w-12 h-12" /> }
+              { number: 99, suffix: '%', label: 'Safety Accuracy', icon: <ShieldIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
+              { number: 24, suffix: '/7', label: 'Monitoring', icon: <EyeIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
+              { number: 500, suffix: '+', label: 'Safety Checks', icon: <CheckIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> },
+              { number: 5, suffix: '', label: 'Safety Levels', icon: <StarIcon className="w-8 h-8 mx-auto mb-4 text-white/60" /> }
             ].map((stat, i) => (
-              <div key={i} className="text-center group transform hover:scale-110 transition-all duration-500">
-                <div className="text-white mb-6 flex justify-center group-hover:rotate-12 transition-transform duration-500">
-                  {stat.icon}
-                </div>
-                <StatsCounter end={stat.number} duration={2000} suffix={stat.suffix} />
-                <div className="text-gray-400 font-medium text-xl mt-4 group-hover:text-white transition-colors duration-300">
+              <div key={i} className="group hover:scale-110 transition-all duration-500">
+                {stat.icon}
+                <StatCounter end={stat.number} suffix={stat.suffix} />
+                <div className="text-gray-400 font-light text-lg mt-2 group-hover:text-gray-300 transition-colors">
                   {stat.label}
                 </div>
               </div>
@@ -450,183 +280,170 @@ const SafetyPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Revolutionary Principles */}
-        <section className="mb-32">
-          <h2 className="text-6xl md:text-7xl font-black text-center mb-20">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        {/* Elegant principles */}
+        <section className="py-24">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-thin text-white mb-6">
               Core Principles
-            </span>
-          </h2>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+              Eight foundational pillars that guide our approach to AI safety, 
+              ensuring responsible development and deployment.
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <PrincipleCard
               icon={<ShieldIcon className="w-full h-full" />}
-              title="Quantum Defense"
-              description="Multi-dimensional protection layers that adapt in real-time to emerging threats and vulnerabilities."
-              gradient="rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8)"
+              title="Security First"
+              description="Comprehensive protection against threats, vulnerabilities, and misuse through proactive security measures."
               delay={0}
             />
             <PrincipleCard
-              icon={<BrainIcon className="w-full h-full" />}
-              title="Neural Alignment"
-              description="Advanced AI consciousness alignment ensuring perfect harmony between artificial and human intelligence."
-              gradient="rgba(147, 51, 234, 0.8), rgba(219, 39, 119, 0.8)"
-              delay={200}
+              icon={<HeartIcon className="w-full h-full" />}
+              title="Human-Centered"
+              description="Designing AI systems that enhance human capabilities while respecting human values and autonomy."
+              delay={100}
             />
             <PrincipleCard
               icon={<EyeIcon className="w-full h-full" />}
-              title="Omniscient Monitoring"
-              description="360-degree awareness system that sees everything, predicts everything, protects everything."
-              gradient="rgba(219, 39, 119, 0.8), rgba(239, 68, 68, 0.8)"
-              delay={400}
+              title="Transparency"
+              description="Clear, explainable AI behavior with comprehensive monitoring and auditing capabilities."
+              delay={200}
             />
             <PrincipleCard
-              icon={<ZapIcon className="w-full h-full" />}
-              title="Lightning Response"
-              description="Instantaneous threat neutralization with microsecond response times and zero tolerance for failure."
-              gradient="rgba(239, 68, 68, 0.8), rgba(245, 158, 11, 0.8)"
-              delay={600}
-            />
-            <PrincipleCard
-              icon={<NetworkIcon className="w-full h-full" />}
-              title="Infinite Scalability"
-              description="Boundless expansion capabilities that grow stronger with every connected system and device."
-              gradient="rgba(245, 158, 11, 0.8), rgba(34, 197, 94, 0.8)"
-              delay={800}
+              icon={<CheckIcon className="w-full h-full" />}
+              title="Reliability"
+              description="Consistent, predictable performance with robust testing and validation protocols."
+              delay={300}
             />
             <PrincipleCard
               icon={<LockIcon className="w-full h-full" />}
-              title="Unbreakable Security"
-              description="Fortress-level protection using quantum encryption and impossible-to-crack security protocols."
-              gradient="rgba(34, 197, 94, 0.8), rgba(6, 182, 212, 0.8)"
-              delay={1000}
+              title="Privacy Protection"
+              description="Safeguarding personal data and ensuring user privacy through advanced encryption and access controls."
+              delay={400}
+            />
+            <PrincipleCard
+              icon={<TrendingUpIcon className="w-full h-full" />}
+              title="Continuous Improvement"
+              description="Iterative enhancement based on feedback, research, and evolving safety standards."
+              delay={500}
+            />
+            <PrincipleCard
+              icon={<UsersIcon className="w-full h-full" />}
+              title="Collaborative Governance"
+              description="Multi-stakeholder approach involving experts, users, and communities in safety decisions."
+              delay={600}
             />
             <PrincipleCard
               icon={<StarIcon className="w-full h-full" />}
-              title="Stellar Performance"
-              description="Beyond perfection - achieving impossible standards that redefine what AI safety can accomplish."
-              gradient="rgba(6, 182, 212, 0.8), rgba(99, 102, 241, 0.8)"
-              delay={1200}
-            />
-            <PrincipleCard
-              icon={<RocketIcon className="w-full h-full" />}
-              title="Future Evolution"
-              description="Self-improving systems that evolve beyond current limitations to protect tomorrow's challenges today."
-              gradient="rgba(99, 102, 241, 0.8), rgba(59, 130, 246, 0.8)"
-              delay={1400}
+              title="Excellence"
+              description="Commitment to the highest standards of quality, ethics, and responsible AI development."
+              delay={700}
             />
           </div>
         </section>
 
-        {/* Epic Safety Levels */}
-        <section className="mb-32">
-          <h2 className="text-6xl md:text-7xl font-black text-center mb-20">
-            <span className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Safety Evolution
-            </span>
-          </h2>
+        {/* Elegant safety levels */}
+        <section className="py-24">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-thin text-white mb-6">
+              Safety Maturity Levels
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+              A progressive framework for AI safety implementation, from foundational 
+              measures to advanced autonomous systems.
+            </p>
+          </div>
+          
           <div className="space-y-8">
-            <LevelCard
+            <SafetyLevel
               level={1}
-              title="Foundation Level"
-              description="Basic AI systems with fundamental safety protocols"
+              title="Foundation"
+              description="Essential safety measures for basic AI systems"
               features={[
-                "Real-time threat detection and response",
-                "Advanced input validation and sanitization",
-                "Automated security monitoring and alerts",
-                "Comprehensive audit trails and logging"
+                "Input validation and sanitization",
+                "Basic monitoring and logging",
+                "Human oversight requirements",
+                "Standard security protocols"
               ]}
-              gradient="rgba(34, 197, 94, 0.6), rgba(59, 130, 246, 0.6)"
               delay={0}
             />
-            <LevelCard
+            <SafetyLevel
               level={2}
-              title="Advanced Level"
-              description="Sophisticated AI with enhanced safety mechanisms"
+              title="Enhanced"
+              description="Advanced safety controls for production systems"
               features={[
-                "Predictive threat analysis and prevention",
-                "Dynamic bias detection and correction",
-                "Intelligent performance optimization",
-                "Advanced human oversight integration"
+                "Automated threat detection",
+                "Bias monitoring and mitigation",
+                "Performance optimization safeguards",
+                "Enhanced audit capabilities"
               ]}
-              gradient="rgba(59, 130, 246, 0.6), rgba(147, 51, 234, 0.6)"
-              delay={200}
+              delay={100}
             />
-            <LevelCard
+            <SafetyLevel
               level={3}
-              title="Expert Level"
-              description="Highly capable AI with comprehensive safety frameworks"
+              title="Advanced"
+              description="Comprehensive safety framework for critical applications"
               features={[
-                "Multi-dimensional safety verification",
-                "Advanced alignment testing protocols",
-                "Autonomous safety decision making",
+                "Multi-layer security validation",
+                "Real-time safety assessment",
+                "Adaptive response mechanisms",
                 "Cross-system safety coordination"
               ]}
-              gradient="rgba(147, 51, 234, 0.6), rgba(219, 39, 119, 0.6)"
-              delay={400}
+              delay={200}
             />
-            <LevelCard
+            <SafetyLevel
               level={4}
-              title="Master Level"
-              description="Near-AGI systems with revolutionary safety standards"
+              title="Expert"
+              description="Sophisticated safety measures for high-stakes environments"
               features={[
-                "Quantum-level safety verification",
-                "Consciousness alignment protocols",
-                "Universal safety standard compliance",
-                "Interdimensional threat protection"
+                "Predictive safety modeling",
+                "Advanced alignment verification",
+                "Autonomous safety decisions",
+                "Comprehensive risk management"
               ]}
-              gradient="rgba(219, 39, 119, 0.6), rgba(239, 68, 68, 0.6)"
-              delay={600}
+              delay={300}
             />
-            <LevelCard
+            <SafetyLevel
               level={5}
-              title="Transcendent Level"
-              description="AGI and beyond with ultimate safety mastery"
+              title="Mastery"
+              description="Ultimate safety standards for AGI and beyond"
               features={[
-                "Perfect safety prediction and prevention",
-                "Universal consciousness alignment",
-                "Reality-level safety guarantees",
-                "Infinite safety evolution capability"
+                "Perfect safety prediction",
+                "Universal alignment verification",
+                "Absolute safety guarantees",
+                "Evolutionary safety adaptation"
               ]}
-              gradient="rgba(239, 68, 68, 0.6), rgba(245, 158, 11, 0.6)"
-              delay={800}
+              delay={400}
             />
           </div>
         </section>
 
-        {/* Epic Call to Action */}
-        <section className="text-center relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-3xl blur-3xl" />
-          <div className="relative z-10 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-3xl p-16 md:p-24 border border-white/10">
-            <div className="text-8xl mb-12 animate-bounce">
-              🚀
-            </div>
-            <h2 className="text-5xl md:text-6xl font-black mb-8">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                Ready to Transform
-              </span>
-              <br />
-              <span className="text-white">The Future?</span>
+        {/* Elegant call to action */}
+        <section className="py-32 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-thin text-white mb-8">
+              Join the Safety Revolution
             </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Join the revolution that's redefining AI safety. Experience the impossible, achieve the unthinkable, and protect humanity's greatest adventure.
+            <p className="text-xl text-gray-300 mb-12 font-light leading-relaxed">
+              Be part of the movement that's shaping the future of AI safety. 
+              Together, we can build technology that serves humanity's best interests.
             </p>
-            <div className="flex flex-wrap justify-center gap-8">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600 text-white font-black py-8 px-16 rounded-full text-2xl transform hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25">
-                <span className="relative z-10">Start Your Journey</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="group px-10 py-5 bg-white text-black rounded-full font-medium text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <span>Get Started</span>
               </button>
-              <button className="border-2 border-white/30 text-white font-black py-8 px-16 rounded-full text-2xl hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-110 backdrop-blur-sm">
-                Explore More
+              <button className="group px-10 py-5 border border-white/30 text-white rounded-full font-medium text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300">
+                <span>Learn More</span>
               </button>
             </div>
-            <div className="mt-12 text-gray-400 italic text-xl">
-              "The future belongs to those who dare to make it safe."
-            </div>
+            <p className="text-gray-400 mt-12 font-light italic text-lg">
+              "The future belongs to those who build it safely."
+            </p>
           </div>
         </section>
       </div>
     </main>
   );
 };
-
-export default SafetyPage;
