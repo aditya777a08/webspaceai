@@ -1,470 +1,188 @@
+
 import React from 'react';
 
-const ShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
-);
+// --- THEMATIC ICONS ---
 
 const CompassIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <circle cx="12" cy="12" r="10"/>
-        <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
+    <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 58C46.3594 58 58 46.3594 58 32C58 17.6406 46.3594 6 32 6C17.6406 6 6 17.6406 6 32C6 46.3594 17.6406 58 32 58Z" stroke="currentColor" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M32 44L40 24L32 16L24 36L32 44Z" stroke="currentColor" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M32 44L24 36" stroke="currentColor" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
 const AnchorIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <circle cx="12" cy="5" r="3"/>
-        <line x1="12" y1="22" x2="12" y2="8"/>
-        <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22V8" />
+        <path d="M5 12H2a10 10 0 0 0 20 0h-3" />
+        <path d="M12 8a4 4 0 0 0-4 4H4a8 8 0 0 1 8-8 8 8 0 0 1 8 8h-4a4 4 0 0 0-4-4z" />
+        <circle cx="12" cy="5" r="2" />
     </svg>
 );
 
-const CrownIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M2 20h20l-2-6-4 2-4-4-4 4-4-2-2 6z"/>
-        <path d="M6 9l4-4 4 4"/>
+const SpyglassIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m10.5 12.5-1.9-1.9a2.1 2.1 0 0 1 0-3l3.8-3.8a2.1 2.1 0 0 1 3 0l1.9 1.9" />
+        <path d="m15.5 7.5 1.9 1.9a2.1 2.1 0 0 1 0 3l-3.8 3.8a2.1 2.1 0 0 1-3 0l-1.9-1.9" />
+        <path d="m14 9-8 8" />
+        <circle cx="6.5" cy="17.5" r="1.5" />
     </svg>
 );
 
-const TreasureIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 0 1-8 0"/>
+const ShipWheelIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="12" cy="12" r="2" />
+        <path d="M12 2v2" /><path d="M12 20v2" />
+        <path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" />
+        <path d="M2 12h2" /><path d="M20 12h2" />
+        <path d="m4.93 19.07 1.41-1.41" /><path d="m17.66 6.34 1.41-1.41" />
     </svg>
 );
 
-const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+const SextantIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 6.5 16 3l-1.5 4" />
+        <path d="m2 9 6 6" />
+        <path d="M13.5 10.5 19 5" />
+        <path d="M12 22V8" />
+        <path d="M7 22h10" />
+        <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+        <path d="M17.5 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
     </svg>
 );
 
-const PrincipleCard: React.FC<{ 
-    icon: React.ReactNode; 
-    title: string; 
-    description: string;
-}> = ({ icon, title, description }) => (
-    <div className="group bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-        <div className="w-12 h-12 mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
+const CompassRoseIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z" />
+        <circle cx="12" cy="12" r="2.5" />
+    </svg>
+);
+
+
+// --- PAGE-SPECIFIC COMPONENTS ---
+
+const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
+    <section className="py-16">
+        <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">{title}</h2>
+            <div className="w-24 h-1 bg-yellow-500/80 mx-auto mt-4 rounded-full"></div>
+        </div>
+        {children}
+    </section>
+);
+
+const PrincipleCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
+    <div className="bg-blue-900/20 border border-blue-400/20 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-teal-500/10">
+        <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-teal-900/50 border border-teal-500/30 text-teal-400 mb-4">
             {icon}
         </div>
-        <h4 className="font-semibold text-xl text-white mb-3">{title}</h4>
-        <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+        <p className="text-blue-200/80 leading-relaxed">{text}</p>
     </div>
 );
 
-const LevelCard: React.FC<{ 
-    level: number; 
-    title: string; 
-    rank: string;
-    description: string; 
-    duties: string[]; 
-    benefits: string[]; 
-    story: string;
-}> = ({ level, title, rank, description, duties, benefits, story }) => (
-    <div className="group relative mb-16">
-        <div className="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all duration-300">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-6 border-b border-gray-800">
-                <div className="flex items-center gap-6 mb-4">
-                    <div className="flex items-center justify-center w-16 h-16 text-2xl font-bold rounded-full bg-white text-black">
-                        {level}
-                    </div>
-                    <div>
-                        <div className="flex items-center gap-2 mb-1">
-                            <CrownIcon className="w-5 h-5 text-gray-400" />
-                            <span className="text-gray-400 font-medium text-sm uppercase tracking-wider">{rank}</span>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white">{title}</h3>
-                    </div>
-                </div>
-                
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                    <p className="text-gray-300 leading-relaxed">{description}</p>
-                </div>
+const TierCard: React.FC<{ tier: number; title: string; icon: React.ReactNode; objective: string; applicability: string[]; measures: string[]; caseStudy: string; }> = ({ tier, title, icon, objective, applicability, measures, caseStudy }) => (
+    <div className="relative pl-16">
+        <div className="absolute left-0 top-0 flex flex-col items-center h-full">
+            <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-blue-900/50 border-2 border-yellow-500/50 text-yellow-500 z-10">
+                {icon}
             </div>
-
-            {/* Content */}
-            <div className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 mb-6">
-                    {/* Responsibilities */}
-                    <div>
-                        <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <ShieldIcon className="w-5 h-5 text-gray-400" />
-                            Core Responsibilities
-                        </h4>
-                        <div className="space-y-3">
-                            {duties.map((duty, i) => (
-                                <div key={i} className="flex items-start gap-3 p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                                    <div className="w-2 h-2 rounded-full bg-white mt-2 flex-shrink-0"></div>
-                                    <span className="text-gray-300 text-sm">{duty}</span>
-                                </div>
-                            ))}
+            <div className="w-0.5 h-full bg-blue-400/20"></div>
+        </div>
+        <div className="mb-12">
+            <div className="bg-gray-900/30 border border-gray-700/50 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-teal-500/50 hover:shadow-2xl hover:shadow-teal-900/20">
+                <div className="p-8">
+                    <h3 className="text-2xl font-serif font-bold text-white mb-2">{`Tier ${tier}: ${title}`}</h3>
+                    <p className="text-yellow-300/80 text-lg mb-6">{objective}</p>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 className="font-semibold text-teal-300 mb-3">Applicable Waters</h4>
+                            <ul className="list-disc list-inside text-blue-200/80 space-y-2">{applicability.map(item => <li key={item}>{item}</li>)}</ul>
                         </div>
-                    </div>
-
-                    {/* Benefits */}
-                    <div>
-                        <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <TreasureIcon className="w-5 h-5 text-gray-400" />
-                            Key Benefits
-                        </h4>
-                        <div className="space-y-3">
-                            {benefits.map((benefit, i) => (
-                                <div key={i} className="flex items-start gap-3 p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                                    <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 flex-shrink-0"></div>
-                                    <span className="text-gray-300 text-sm">{benefit}</span>
-                                </div>
-                            ))}
+                        <div>
+                            <h4 className="font-semibold text-teal-300 mb-3">Captain's Instruments</h4>
+                            <ul className="list-disc list-inside text-blue-200/80 space-y-2">{measures.map(item => <li key={item}>{item}</li>)}</ul>
                         </div>
                     </div>
                 </div>
-
-                {/* Story */}
-                <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-700/50">
-                    <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                        <StarIcon className="w-5 h-5 text-gray-400" />
-                        Captain's Tale
-                    </h4>
-                    <p className="text-gray-300 leading-relaxed italic">"{story}"</p>
+                <div className="bg-black/30 p-6 border-t border-gray-700/50">
+                    <p className="text-gray-400 italic"><strong className="text-gray-300 not-italic">From the Logbook:</strong> {caseStudy}</p>
                 </div>
             </div>
         </div>
     </div>
 );
 
-const ImplementationStep: React.FC<{ step: number; title: string; description: string }> = ({ step, title, description }) => (
-    <div className="group flex items-start gap-6">
-        <div className="flex-shrink-0 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform duration-300">
-            {step}
-        </div>
-        <div className="flex-1 pt-2">
-            <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-gray-200 transition-colors duration-300">{title}</h4>
-            <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{description}</p>
-        </div>
-    </div>
-);
 
 const SafetyPage: React.FC = () => {
     return (
-        <main className="bg-[#111] text-gray-200 min-h-screen">
-            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 xl:px-24 py-16">
+        <div className="bg-[#0a192f] text-[#f0e6d2] font-sans">
+             <style>{`.font-serif { font-family: 'Times New Roman', Times, serif; }`}</style>
+            <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+                
                 {/* Hero Section */}
-                <div className="text-center mb-20">
-                    <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 rounded-full px-6 py-2 mb-8">
-                        <CrownIcon className="w-5 h-5 text-gray-400" />
-                        <span className="text-gray-400 font-medium text-sm uppercase tracking-wider">AI Safety Framework</span>
+                <header className="text-center pt-10 pb-20">
+                    <div className="inline-block p-2 rounded-full bg-yellow-500/10 mb-8 animate-pulse">
+                         <CompassIcon className="w-24 h-24 mx-auto text-yellow-400" />
                     </div>
-                    
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-                        <span className="text-white">The Captain</span>
-                        <br />
-                        <span className="text-gray-400">Never Dies</span>
-                    </h1>
-                    
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-                        Like the legendary Captain Jack Sparrow, true AI safety is immortal—a framework that endures through every challenge, every evolution of technology.
-                    </p>
-                    
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition-colors">
-                            Begin the Journey
-                        </button>
-                        <button className="border border-gray-600 text-gray-300 font-semibold py-3 px-8 rounded-full hover:border-gray-500 hover:bg-gray-900 transition-colors">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-                    {[
-                        { number: '5', label: 'Safety Levels', icon: '🛡️' },
-                        { number: '8', label: 'Core Principles', icon: '⚓' },
-                        { number: '∞', label: 'Eternal Vigilance', icon: '👁️' },
-                        { number: '1', label: 'Immortal Code', icon: '⭐' }
-                    ].map((stat, i) => (
-                        <div key={i} className="text-center group">
-                            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                                {stat.icon}
-                            </div>
-                            <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-105 transition-transform duration-300">
-                                {stat.number}
-                            </div>
-                            <div className="text-gray-400 font-medium">{stat.label}</div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Introduction */}
-                <section className="mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-                        The Eternal Framework
-                    </h2>
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <p className="text-xl text-gray-300 leading-relaxed">
-                                In the vast oceans of artificial intelligence, where storms of complexity rage and uncharted waters stretch beyond the horizon, one truth remains constant: the Captain never dies.
-                            </p>
-                            <p className="text-xl text-gray-300 leading-relaxed">
-                                Like Captain Jack Sparrow's legendary immortality, our AI Safety Framework transcends time, technology, and challenge. It is not merely a set of rules—it is an eternal covenant.
-                            </p>
-                        </div>
-                        <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
-                            <h4 className="text-xl font-semibold text-white mb-6 flex items-center gap-3">
-                                <TreasureIcon className="w-6 h-6 text-gray-400" />
-                                Framework Pillars
-                            </h4>
-                            <div className="space-y-4">
-                                {[
-                                    'Immortal safety principles',
-                                    'Timeless navigation wisdom', 
-                                    'Unbreakable protective measures',
-                                    'Legendary operational standards'
-                                ].map((pillar, i) => (
-                                    <div key={i} className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-white"></div>
-                                        <span className="text-gray-300">{pillar}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    <h1 className="font-serif text-5xl md:text-7xl font-bold text-white mb-6">The Captain's Codex</h1>
+                    <p className="text-xl md:text-2xl text-teal-300/90 max-w-3xl mx-auto mb-8">A Charter for AI Safety, Navigating the Frontiers of Intelligence with Unwavering Vigilance.</p>
+                    <p className="text-lg text-gray-400 max-w-2xl mx-auto italic">"A captain is bound to their ship, their crew, and the sea. Our commitment to safety is that binding—the compass that guides every decision, ensuring the voyage is not just bold, but sound."</p>
+                </header>
 
                 {/* Core Principles */}
-                <section className="mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-                        Eight Core Principles
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <PrincipleCard
-                            icon={<CompassIcon className="w-full h-full" />}
-                            title="Navigate by Stars"
-                            description="Chart your course using capability and risk as guiding constellations for safe passage."
-                        />
-                        <PrincipleCard
-                            icon={<AnchorIcon className="w-full h-full" />}
-                            title="Drop Anchor When Needed"
-                            description="Know when to halt and secure your vessel—clear warning signals guide you away from danger."
-                        />
-                        <PrincipleCard
-                            icon={<ShieldIcon className="w-full h-full" />}
-                            title="Layer Your Defenses"
-                            description="Never rely on single protection—build multiple shields like a wise admiral fortifies their fleet."
-                        />
-                        <PrincipleCard
-                            icon={<CompassIcon className="w-full h-full" />}
-                            title="Test in Safe Waters"
-                            description="Prove your vessel's worth against controlled challenges before sailing unknown territories."
-                        />
-                        <PrincipleCard
-                            icon={<TreasureIcon className="w-full h-full" />}
-                            title="Convene the Council"
-                            description="Gather the wisest captains to guide decisions and maintain the sacred code."
-                        />
-                        <PrincipleCard
-                            icon={<CrownIcon className="w-full h-full" />}
-                            title="Maintain Vigilance"
-                            description="Post sentries day and night—constant watchfulness protects from unforeseen threats."
-                        />
-                        <PrincipleCard
-                            icon={<StarIcon className="w-full h-full" />}
-                            title="Chronicle Every Voyage"
-                            description="Record every battle and discovery—wisdom is the most precious treasure."
-                        />
-                        <PrincipleCard
-                            icon={<CompassIcon className="w-full h-full" />}
-                            title="Share the Knowledge"
-                            description="Spread discoveries across the seas—together we make all waters safer to sail."
-                        />
+                <Section title="The Ship's Articles">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                         {[
+                            { title: 'Chart the Waters', text: 'Match your sails to the prevailing winds. Safety measures must scale with model power.', icon: <SpyglassIcon className="w-8 h-8"/> },
+                            { title: 'Heed the Beacons', text: 'Establish clear, measurable risk-markers that trigger heightened safety protocols.', icon: <SextantIcon className="w-8 h-8"/> },
+                            { title: 'A Formidable Hull', text: 'Employ layered defenses—technical, procedural, and human—to repel any threat.', icon: <ShipWheelIcon className="w-8 h-8"/> },
+                            { title: 'Brave the Storm', text: 'Subject every model to relentless adversarial testing and formal red teaming.', icon: <AnchorIcon className="w-8 h-8"/> },
+                        ].map(p => <PrincipleCard key={p.title} {...p} />)}
                     </div>
-                </section>
+                </Section>
+                
+                {/* The Five Tiers */}
+                <Section title="Charting the Voyage">
+                    <div className="max-w-4xl mx-auto">
+                        <TierCard tier={1} title="At Safe Harbor" icon={<AnchorIcon className="w-8 h-8"/>} objective="Secure the vessel against common squalls and simple threats in narrow, low-impact systems." applicability={["Internal tools with fixed purposes", "Simple Q&A bots on known waters", "Contained recommendation engines"]} measures={["Input Validation & Output Constraints", "Access Controls & Authentication", "Unit Tests & Manual Reviews", "Clear Documentation"]} caseStudy="The Quartermaster's Ledger (an internal review-filtering tool) is fitted with profanity filters and access logs, preventing both mutinous inputs and accidental leakage of the ship's manifest." />
+                        <TierCard tier={2} title="Coastal Sailing" icon={<SpyglassIcon className="w-8 h-8"/>} objective="Introduce moderate defenses and basic monitoring for interactive or generative models in controlled waters." applicability={["Domain-limited chatbots", "Constrained virtual assistants", "Simple generative tools"]} measures={["Robust Filtering & Refusal Triggers", "Sandboxing & Anomaly Detection", "Basic Red Teaming", "Incident Response Drills"]} caseStudy="A financial chatbot is trained to politely refuse requests for treasure maps (investment advice). Its code is sandboxed, and alerts notify the crew of unusual activity, like a sudden interest in forbidden islands." />
+                        <TierCard tier={3} title="Open Waters" icon={<ShipWheelIcon className="w-8 h-8"/>} objective="Defend against sophisticated misuse and integrate human oversight for high-stakes actions in capable systems." applicability={["Advanced conversational agents", "Media and code generation tools", "Systems navigating external data seas"]} measures={["Constitutional Jailbreak Defenses", "Behavioral Monitoring", "Expert Red Teaming & Ethics Council", "Formal Safety Cases"]} caseStudy="A healthcare assistant summarizing ancient medical texts uses a 'constitutional' AI core to refuse to provide personal diagnoses. An external council of seasoned captains and healers reviews its logs before it's cleared for duty." />
+                        <TierCard tier={4} title="Into the Abyss" icon={<SextantIcon className="w-8 h-8"/>} objective="Anticipate and mitigate emergent leviathans in general-purpose systems nearing human-level performance." applicability={["Multi-modal models", "Large foundation models", "Experimental agentic systems"]} measures={["Scaled Oversight & Interpretability", "Predictive Threat Detection", "External Expert Validation", "Coordination with other Fleets"]} caseStudy="A multimodal reasoning engine shows glimmers of strategic thought. Interpretability tools reveal its intent, allowing the crew to patch its core directives. An external AI safety fleet validates the fix before its next voyage." />
+                        <TierCard tier={5} title="Charting the Unknown" icon={<CompassRoseIcon className="w-8 h-8"/>} objective="Manage existential risks from systems at or beyond human intelligence, ensuring provable control and global governance." applicability={["Experimental AGI prototypes", "Strategically-aware agentic systems", "Large-scale multi-agent ecosystems"]} measures={["Provably Robust Alignment", "Hardware & Network Failsafes", "AI-Assisted Oversight", "Global Governance Council"]} caseStudy="A consortium's AGI testbed is built with a non-negotiable 'Return to Port' command, formally verified to be unassailable. A global council of grand captains reviews all logs, ensuring this power is never turned against its creators." />
+                    </div>
+                </Section>
 
-                {/* Safety Levels */}
-                <section className="mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-                        The Five Levels of Mastery
-                    </h2>
-                    <p className="text-xl text-gray-400 text-center max-w-4xl mx-auto mb-16">
-                        From humble ship's apprentice to immortal Captain—each level embodies greater wisdom and stronger defenses.
+                {/* Getting Started */}
+                <Section title="Setting Sail">
+                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        {[
+                            "Take Your Bearings: Assess your current fleet of AI models and their capabilities.",
+                            "Inspect the Rigging: Identify gaps in your current safety protocols against this charter.",
+                            "Plot Your Course: Develop a clear roadmap to implement necessary safeguards.",
+                            "Assemble Your Crew: Establish your own Captain's Council for governance.",
+                            "Read the Stars: Define and monitor key safety metrics for every voyage.",
+                            "Adjust the Sails: Continuously evolve the framework with new learnings and research."
+                        ].map((step, index) => (
+                             <div key={index} className="bg-gray-900/40 p-6 rounded-lg border border-gray-700/60 flex items-start space-x-4">
+                                <div className="text-2xl font-bold text-teal-400/80 mt-1">{`0${index + 1}`}</div>
+                                <p className="text-blue-200/90">{step}</p>
+                            </div>
+                        ))}
+                    </div>
+                </Section>
+
+                {/* Conclusion */}
+                <footer className="text-center border-t border-blue-400/20 pt-16">
+                    <h3 className="font-serif text-3xl font-bold text-white mb-4">An Unwavering Compass</h3>
+                    <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        This Codex is more than a map; it is our solemn oath. It empowers us to explore the vast potential of AI with courage and conviction, knowing our course is true. By embracing these principles, we ensure that as our creations grow more powerful, our wisdom grows deeper, keeping the promise of technology firmly in the service of humanity.
                     </p>
+                </footer>
 
-                    <LevelCard 
-                        level={1} 
-                        title="Ship's Apprentice" 
-                        rank="Foundation Level"
-                        description="Learn the sacred ways and tend to basic duties—foundational skills for simple AI tasks that pose minimal risk." 
-                        duties={[
-                            "Master basic input validation and cleansing",
-                            "Implement fundamental access controls", 
-                            "Establish simple logging and monitoring",
-                            "Follow established safety documentation"
-                        ]} 
-                        benefits={[
-                            "Clean operational foundations",
-                            "Protected data sanctuaries", 
-                            "Basic but reliable defenses",
-                            "Clear navigational charts"
-                        ]} 
-                        story="Young Marina began as an apprentice on Captain Blackwater's sentiment analysis vessel. By mastering input cleansing and access control, she prevented corruption of precious customer insights."
-                    />
-
-                    <LevelCard 
-                        level={2} 
-                        title="Skilled Navigator" 
-                        rank="Intermediate Level"
-                        description="Handle the ship's defenses and engage with the outside world—skills for interactive AI that communicates with users." 
-                        duties={[
-                            "Deploy advanced filtering and content shields",
-                            "Monitor for anomalous patterns and threats",
-                            "Conduct regular security assessments", 
-                            "Maintain emergency response protocols"
-                        ]} 
-                        benefits={[
-                            "Battle-tested defensive systems",
-                            "Threat detection capabilities",
-                            "Crew training programs",
-                            "Emergency response readiness"
-                        ]} 
-                        story="Navigator Elena sailed with the Royal Chatbot Fleet, where her mastery of semantic filtering and anomaly detection saved the day when adversaries attempted to extract strategic secrets."
-                    />
-
-                    <LevelCard 
-                        level={3} 
-                        title="Royal Officer" 
-                        rank="Advanced Level"
-                        description="Command ship operations and coordinate defenses—advanced skills for capable AI that can generate powerful artifacts." 
-                        duties={[
-                            "Implement constitutional AI governance",
-                            "Oversee performance monitoring and optimization",
-                            "Lead expert security assessments",
-                            "Establish formal safety charters"
-                        ]} 
-                        benefits={[
-                            "Advanced governance frameworks",
-                            "Performance optimization insights", 
-                            "Expert security consultations",
-                            "Formal safety documentation"
-                        ]} 
-                        story="Commander Thorne led the HMS Code Forge, where constitutional AI principles helped the vessel refuse dangerous requests, earning commendation from the Royal Academy of Ethics."
-                    />
-
-                    <LevelCard 
-                        level={4} 
-                        title="Admiral of the Fleet" 
-                        rank="Expert Level"
-                        description="Navigate uncharted waters and command multiple vessels—master-level skills for near-legendary AI approaching ancient powers." 
-                        duties={[
-                            "Navigate using advanced interpretability tools",
-                            "Coordinate multi-system fleet operations",
-                            "Consult with the Royal Safety Council",
-                            "Secure approval from maritime authorities"
-                        ]} 
-                        benefits={[
-                            "Advanced navigation instruments",
-                            "Fleet coordination capabilities",
-                            "Royal council endorsements", 
-                            "Official maritime licenses"
-                        ]} 
-                        story="Admiral Stormwind's multimodal reasoning fleet discovered corrupted navigation charts. Using advanced interpretability tools, they detected the corruption and earned the Royal Safety Council's blessing."
-                    />
-
-                    <LevelCard 
-                        level={5} 
-                        title="Immortal Captain" 
-                        rank="Legendary Level"
-                        description="Rule the seven seas with eternal wisdom—legendary skills for AI that rivals the greatest human captains, yet never dies." 
-                        duties={[
-                            "Wield the Crown of Provable Alignment",
-                            "Command the Leviathan of hardware failsafes", 
-                            "Consult with the Oracle of AI-assisted oversight",
-                            "Unite all fleets under the eternal code"
-                        ]} 
-                        benefits={[
-                            "Divine mathematical proofs",
-                            "Leviathan-powered emergency systems",
-                            "Oracle-guided oversight",
-                            "Universal maritime law"
-                        ]} 
-                        story="The Immortal Captain's AGI fleet required blessing from all sea gods. With Poseidon's Crown ensuring no vessel could override shutdown commands, the fleet earned the right to sail the most dangerous waters under eternal watch."
-                    />
-                </section>
-
-                {/* Implementation Guide */}
-                <section className="mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-                        The Eternal Quest
-                    </h2>
-                    <p className="text-xl text-gray-400 text-center max-w-4xl mx-auto mb-16">
-                        Follow this sacred map to transform your fleet into an immortal force of AI safety.
-                    </p>
-                    
-                    <div className="max-w-4xl mx-auto space-y-12">
-                        <ImplementationStep 
-                            step={1}
-                            title="Survey Your Fleet"
-                            description="Take inventory of all your AI vessels and assign each to its proper level based on capability and potential impact."
-                        />
-                        <ImplementationStep 
-                            step={2}
-                            title="Identify Vulnerable Waters"
-                            description="Discover which defenses are missing and prioritize reinforcements based on the greatest threats."
-                        />
-                        <ImplementationStep 
-                            step={3}
-                            title="Chart the Course"
-                            description="Create a detailed plan showing when and how to upgrade each vessel's defenses, starting with the most powerful."
-                        />
-                        <ImplementationStep 
-                            step={4}
-                            title="Convene the Council"
-                            description="Assemble a council of wise admirals and safety experts with clear authority to make critical decisions."
-                        />
-                        <ImplementationStep 
-                            step={5}
-                            title="Raise the Beacons"
-                            description="Build a monitoring network to detect danger signals and alert the fleet when storms approach."
-                        />
-                        <ImplementationStep 
-                            step={6}
-                            title="Train the Crew"
-                            description="Teach all sailors the Eternal Code and build a culture where safety is every crew member's honor."
-                        />
-                        <ImplementationStep 
-                            step={7}
-                            title="Sail with Vigilance"
-                            description="Review your Code with each tide, learning from new voyages and the wisdom of fellow captains."
-                        />
-                    </div>
-                </section>
-
-                {/* Call to Action */}
-                <section className="text-center">
-                    <div className="bg-gray-900 rounded-2xl p-12 md:p-16 border border-gray-800">
-                        <div className="text-6xl mb-8">⚓</div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Begin Your Journey?</h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                            The Captain's Eternal Code of AI Safety is your compass through infinite seas ahead. With this immortal framework, you can navigate any storm and reach the safest harbors.
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <button className="bg-white text-black font-semibold py-4 px-10 rounded-full text-lg hover:bg-gray-200 transition-colors">
-                                Begin the Journey
-                            </button>
-                            <button className="border border-gray-600 text-gray-300 font-semibold py-4 px-10 rounded-full text-lg hover:border-gray-500 hover:bg-gray-900 transition-colors">
-                                Contact the Council
-                            </button>
-                        </div>
-                        <div className="mt-8 text-gray-500 italic">
-                            "The sea is vast and full of wonders, but with the eternal code, every captain finds their way home—and never truly dies."
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
+            </main>
+        </div>
     );
 };
 
