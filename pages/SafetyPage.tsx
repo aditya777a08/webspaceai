@@ -216,7 +216,7 @@ const SafetyPage: React.FC = () => {
                   'Unyielding safety tenets',
                   'Cunning navigational wisdom',
                   'Stalwart protective measures',
-                  "Legendary pirate's honor"
+                  'Legendary pirate\'s honor'
                 ].map((pillar, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-[#FFD700]"></div>
