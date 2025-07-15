@@ -97,29 +97,23 @@ const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, title, description,
   return (
     <div
       ref={ref}
-      className={`group relative p-6 md:p-8 rounded-3xl backdrop-blur-sm border transition-all duration-700 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/5 ${className} ${
+      className={`group relative p-6 md:p-8 rounded-2xl bg-gray-900 border border-gray-800 transition-all duration-300 hover:bg-gray-800 hover:border-gray-700 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,255,255,0.07)] ${className} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-3xl" />
-      
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-500 flex-shrink-0">
+      <div className="flex flex-col h-full">
+        <div className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-white/80 group-hover:text-white transition-all duration-300 flex-shrink-0">
           {icon}
         </div>
         
         <div className="flex-grow">
-          <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 group-hover:text-white transition-colors leading-tight">
+          <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 leading-tight">
             {title}
           </h3>
-          <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+          <p className="text-sm md:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
             {description}
           </p>
         </div>
-        
-        {/* Hover glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/[0.02] to-white/0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         {icon}
       </div>
     </div>
@@ -282,56 +276,48 @@ const SafetyPage: React.FC = () => {
               title="Security First"
               description="Comprehensive protection against threats, vulnerabilities, and misuse through proactive security measures."
               delay={0}
-              className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-400/20"
             />
             <PrincipleCard
               icon={<HeartIcon className="w-full h-full" />}
               title="Human-Centered"
               description="Designing AI systems that enhance human capabilities while respecting human values and autonomy."
               delay={100}
-              className="bg-gradient-to-br from-rose-500/10 to-pink-500/10 border-rose-400/20"
             />
             <PrincipleCard
               icon={<EyeIcon className="w-full h-full" />}
               title="Transparency"
               description="Clear, explainable AI behavior with comprehensive monitoring and auditing capabilities."
               delay={200}
-              className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-amber-400/20"
             />
             <PrincipleCard
               icon={<CheckIcon className="w-full h-full" />}
               title="Reliability"
               description="Consistent, predictable performance with robust testing and validation protocols."
               delay={300}
-              className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-green-400/20"
             />
             <PrincipleCard
               icon={<LockIcon className="w-full h-full" />}
               title="Privacy Protection"
               description="Safeguarding personal data and ensuring user privacy through advanced encryption and access controls."
               delay={400}
-              className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border-purple-400/20"
             />
             <PrincipleCard
               icon={<TrendingUpIcon className="w-full h-full" />}
               title="Continuous Improvement"
               description="Iterative enhancement based on feedback, research, and evolving safety standards."
               delay={500}
-              className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 border-teal-400/20"
             />
             <PrincipleCard
               icon={<UsersIcon className="w-full h-full" />}
               title="Collaborative Governance"
               description="Multi-stakeholder approach involving experts, users, and communities in safety decisions."
               delay={600}
-              className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 border-violet-400/20"
             />
             <PrincipleCard
               icon={<StarIcon className="w-full h-full" />}
               title="Excellence"
               description="Commitment to the highest standards of quality, ethics, and responsible AI development."
               delay={700}
-              className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-yellow-400/20"
             />
           </div>
         </section>
